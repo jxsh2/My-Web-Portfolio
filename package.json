@@ -1,0 +1,38 @@
+{
+  "name": "zynappse-nextjs-boilerplate",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=development node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "_moduleAliases": {
+    "schemas": "schemas/",
+    "utils": "utils/",
+    "nextRoutes": "_routes.js",
+    "apiRoutes": "routes/"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
+    "next": "^12.1.4",
+    "next-compose": "0.0.2",
+    "next-compose-plugins": "^2.2.1",
+    "next-routes-extended": "^1.7.0",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "1.49.9",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.1.2",
+    "swr": "^2.0.3"
+  }
+}

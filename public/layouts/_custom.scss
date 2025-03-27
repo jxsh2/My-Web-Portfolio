@@ -1,0 +1,38 @@
+.globalOffsetPaddingTop {
+  padding-top: 15em;
+
+  @include tablet {
+    padding-top: 15em;
+  }
+
+  @include phablet {
+    padding-top: 15em;
+  }
+
+  @include mobile {
+    padding-top: 10em;
+  }
+}
+
+.greetingsContainer {
+  height: 100vh;
+  position: relative;
+
+  h1,
+  code {
+    margin: 0 !important;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    top: 50%;
+    font-size: 3em !important;
+  }
+
+  code {
+    top: 60%;
+  }
+}

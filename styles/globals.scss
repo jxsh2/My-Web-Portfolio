@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,900;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+// Fonts
+$font-noto: "Noto Sans", sans-serif;
+$font-poppins: "Poppins", sans-serif;
+
+// Colors
+$dark-blue: #082032;
+$medium-blue: #457b9d;
+$orange: #e63946;
+$light-blue: #a8dadc;
+$white: #f1faee;
+
+// Reset & Global Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-padding-top: 8vh;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: $font-poppins !important;
+  background-color: $dark-blue;
+  color: $white;
+  font-size: 1.25rem;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+// Utility Classes
+.font-noto {
+  font-family: $font-noto;
+}
+
+.font-poppins {
+  font-family: $font-poppins;
+}
+
+// -------------------------------
+// Typography
+// -------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-poppins;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+}
+
+p {
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  line-height: 170%;
+  font-weight: 200;
+}
+
+// -------------------------------
+// Global Background & Utility Classes
+// -------------------------------
+
+.bg-dark-blue {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.bg-medium-blue {
+  background-color: $medium-blue;
+  color: $white;
+}
+
+.bg-orange {
+  background-color: $orange;
+  color: $white;
+}
+
+.bg-light-blue {
+  background-color: $light-blue;
+  color: $dark-blue;
+}
+
+.text-dark-blue {
+  color: $dark-blue;
+}
+
+.text-medium-blue {
+  color: $medium-blue;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-white {
+  color: $white;
+}
+
+// -------------------------------
+// Buttons
+// -------------------------------
+
+button {
+  background-color: #e63946 !important;
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: $font-poppins !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    background-color: #e63946 !important; /* Darker hover effect */
+    transform: scale(1.05); /* Slightly increase button size */
+  }
+}
+
+img {
+  display: block !important;
+  width: 100% !important;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  // border: 1px red solid;
+  width: 100%;
+}
+.divider {
+  flex-grow: 1;
+  background-color: $orange !important;
+  margin: 0 !important;
+  height: 2px !important;
+}
+
+sub {
+  font-weight: 300;
+  font-size: 0.5rem;
+  margin: 0;
+}

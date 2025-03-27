@@ -1,0 +1,71 @@
+// width and height
+.w100 {
+    width: 100% !important;
+}
+
+.h100 {
+    height: 100% !important;
+}
+
+.wAuto {
+    width: auto !important;
+}
+
+// margin utility classes
+.mt0, .my0, .m0 { margin-top: 0 !important; }
+.mt1, .my1 { margin-top: .25em !important; }
+.mt2, .my2 { margin-top: .5em !important; }
+.mt3, .my3 { margin-top: 1em !important; }
+.mt4, .my4 { margin-top: 1.5em !important; }
+.mt5, .my5 { margin-top: 3em !important; }
+
+.ml0, .mx0, .m0 { margin-left: 0 !important; }
+.ml1, .mx1 { margin-left: .25em !important; }
+.ml2, .mx2 { margin-left: .5em !important; }
+.ml3, .mx3 { margin-left: 1em !important; }
+.ml4, .mx4 { margin-left: 1.5em !important; }
+.ml5, .mx5 { margin-left: 3em !important; }
+.ml6, .mx6 { margin-left: 2em !important; }
+
+.mr0, .mx0, .m0 { margin-right: 0 !important; }
+.mr1, .mx1 { margin-right: .25em !important; }
+.mr2, .mx2 { margin-right: .5em !important; }
+.mr3, .mx3 { margin-right: 1em !important; }
+.mr4, .mx4 { margin-right: 1.5em !important; }
+.mr5, .mx5 { margin-right: 3em !important; }
+
+.mb0, .my0, .m0 { margin-bottom: 0 !important; }
+.mb1, .my1 { margin-bottom: .25em !important; }
+.mb2, .my2 { margin-bottom: .5em !important; }
+.mb3, .my3 { margin-bottom: 1em !important; }
+.mb4, .my4 { margin-bottom: 1.5em !important; }
+.mb5, .my5 { margin-bottom: 3em !important; }
+
+// padding utility classes
+.pt0, .py0, .p0 { padding-top: 0 !important; }
+.pt1, .py1 { padding-top: .25em !important; }
+.pt2, .py2 { padding-top: .5em !important; }
+.pt3, .py3 { padding-top: 1em !important; }
+.pt4, .py4 { padding-top: 1.5em !important; }
+.pt5, .py5 { padding-top: 3em !important; }
+
+.pl0, .px0, .p0 { padding-left: 0 !important; }
+.pl1, .px1 { padding-left: .25em !important; }
+.pl2, .px2 { padding-left: .5em !important; }
+.pl3, .px3 { padding-left: 1em !important; }
+.pl4, .px4 { padding-left: 1.5em !important; }
+.pl5, .px5 { padding-left: 3em !important; }
+
+.pr0, .px0, .p0 { padding-right: 0 !important; }
+.pr1, .px1 { padding-right: .25em !important; }
+.pr2, .px2 { padding-right: .5em !important; }
+.pr3, .px3 { padding-right: 1em !important; }
+.pr4, .px4 { padding-right: 1.5em !important; }
+.pr5, .px5 { padding-right: 3em !important; }
+
+.pb0, .py0, .p0 { padding-bottom: 0 !important; }
+.pb1, .py1 { padding-bottom: .25em !important; }
+.pb2, .py2 { padding-bottom: .5em !important; }
+.pb3, .py3 { padding-bottom: 1em !important; }
+.pb4, .py4 { padding-bottom: 1.5em !important; }
+.pb5, .py5 { padding-bottom: 3em !important; }

@@ -1,0 +1,298 @@
+.projectGrid {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #064663;
+  h2 {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #f1faee;
+  }
+
+  .gridCont {
+    margin: auto;
+    justify-content: center !important; // Centers the grid items
+    display: flex !important;
+    .colGrid {
+      padding: 1rem !important;
+      margin: auto !important;
+      //   border: 1px red solid;
+
+      .projectCard {
+        width: 100%;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        min-height: 300px !important;
+        cursor: pointer;
+        position: relative;
+        background-color: white;
+        //   border: 1px red solid;
+
+        h6,
+        p {
+          font-family: "Poppins", sans-serif !important;
+          line-height: 170% !important;
+        }
+
+        h6 {
+          font-size: 1.1rem !important;
+          color: #082032 !important;
+        }
+
+        p {
+          font-size: 0.7rem;
+          font-weight: 500;
+          position: relative;
+          color: #457b9d !important;
+          margin: 0 !important;
+        }
+
+        .content {
+          padding: 1rem;
+          position: relative;
+          min-height: 110px !important; /* Ensures icon is positioned relative to content */
+        }
+
+        &:hover {
+          transform: translateY(-8px);
+        }
+
+        .cardExtraContent {
+          display: flex !important;
+          align-items: center;
+          justify-content: space-between;
+          gap: 3rem !important;
+          padding: 0.5rem 1rem 0.5rem;
+          background-color: white;
+
+          .stackCont {
+            display: flex;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 1.1rem;
+
+            .techStack {
+              background-color: #e63946;
+              color: white;
+              font-weight: 600;
+              border-radius: 6px;
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+        .iconContainer {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: auto !important; /* Adjust space between description and icon */
+          position: absolute; /* Ensures it's in the corner */
+          bottom: 10px;
+          right: 10px;
+        }
+
+        .icon {
+          font-size: 0.7rem !important; /* Adjust the icon size */
+          color: black;
+        }
+      }
+    }
+  }
+}
+.showMoreButton {
+  margin-top: 1rem !important;
+  text-align: center;
+}
+
+//mobile
+@mixin mobile {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@include mobile {
+  .projectGrid {
+    padding: 2rem 1rem 2rem;
+
+    h2 {
+      font-size: 1.3rem !important;
+      letter-spacing: 0.5rem;
+      margin-bottom: 1rem;
+      -webkit-text-stroke: 1px #f1faee;
+    }
+
+    .gridCont {
+      margin: auto;
+
+      .colGrid {
+        .projectCard {
+          min-height: 300px;
+
+          h6 {
+            font-size: 0.9rem !important;
+          }
+
+          p {
+            font-size: 0.6rem;
+          }
+
+          .content {
+            min-height: 120px !important;
+            padding: 0.5rem;
+          }
+
+          .cardExtraContent {
+            padding: 0.5rem;
+            .stackCont {
+              .techStack {
+                font-size: 0.5rem;
+              }
+            }
+          }
+
+          .iconContainer {
+            bottom: 2px;
+            right: 10px;
+          }
+
+          .icon {
+            font-size: 0.6rem !important; /* Adjust the icon size */
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .showMoreButton {
+    margin: 0 !important;
+
+    button {
+      font-size: 0.7rem !important;
+    }
+  }
+}
+
+@mixin phablet {
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+//phablet
+@include phablet {
+  .projectGrid {
+    padding: 2rem !important;
+    align-items: center;
+    h2 {
+      font-size: 2rem !important;
+      letter-spacing: 0.5rem;
+      margin-bottom: 1rem;
+      -webkit-text-stroke: 1px #f1faee;
+    }
+
+    .gridCont {
+      margin: auto;
+      align-items: center !important;
+
+      .colGrid {
+        .projectCard {
+          // max-width: 50vw !important;
+          min-height: 60vh;
+          h6 {
+            font-size: 1rem !important;
+          }
+
+          p {
+            font-size: 0.7rem;
+          }
+          .content {
+            min-height: 110px !important;
+            padding: 1rem;
+          }
+
+          .cardExtraContent {
+            padding: 0.5rem 1rem 0.5rem;
+            .stackCont {
+              .techStack {
+                font-size: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .showMoreButton {
+    margin: 0 !important;
+
+    button {
+      font-size: 0.7rem !important;
+    }
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+//tablet
+@include tablet {
+  .projectGrid {
+    padding: 2rem !important;
+    align-items: center;
+    h2 {
+      font-size: 2.5rem !important;
+      letter-spacing: 0.5rem;
+      margin-bottom: 1rem;
+      -webkit-text-stroke: 1px #f1faee;
+    }
+
+    .gridCont {
+      margin: auto;
+      align-items: center !important;
+
+      .colGrid {
+        .projectCard {
+          min-height: 300px;
+          h6 {
+            font-size: 1.1rem !important;
+          }
+
+          p {
+            font-size: 0.7rem;
+          }
+
+          .content {
+            padding: 1rem;
+            min-height: 150px !important;
+          }
+
+          .cardExtraContent {
+            padding: 0.5rem 1rem 0.5rem;
+            .stackCont {
+              .techStack {
+                font-size: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .showMoreButton {
+    margin: 0.5 !important;
+
+    button {
+      font-size: 0.8rem !important;
+    }
+  }
+}

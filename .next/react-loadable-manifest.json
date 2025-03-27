@@ -1,0 +1,14 @@
+{
+  "..\\layout\\main.js -> components/generics/Head": {
+    "id": "..\\layout\\main.js -> components/generics/Head",
+    "files": [
+      "static/chunks/components_generics_Head_js.js"
+    ]
+  },
+  "..\\layout\\main.js -> components/generics/Loader": {
+    "id": "..\\layout\\main.js -> components/generics/Loader",
+    "files": [
+      "static/chunks/components_generics_Loader_js.js"
+    ]
+  }
+}

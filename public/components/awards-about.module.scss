@@ -1,0 +1,165 @@
+.awardCont {
+  background-color: #064663;
+  text-align: center;
+  width: 100%;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1rem;
+    text-align: center;
+    margin: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+.scrollerWrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.scrollerInner {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  gap: 1rem;
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .timelineItem {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .timelineContent {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(100px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      gap: 0.5rem;
+
+      .textSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+
+        h3 {
+          font-weight: 800;
+          font-size: 0.7rem;
+          color: #e63946;
+          margin: 0;
+        }
+
+        h4 {
+          font-weight: 300 !important;
+          font-style: italic;
+          font-size: 0.5rem !important;
+          color: #f1faee;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+//mobile
+@mixin mobile {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@include mobile {
+  .awardCont {
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+      margin: 0.5rem;
+    }
+  }
+
+  .scrollerInner {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    gap: 0.5rem;
+
+    .timelineItem {
+      min-width: 200px;
+
+      .timelineContent {
+        padding: 0.6rem;
+      }
+    }
+  }
+}
+
+@mixin phablet {
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+//phablet
+@include phablet {
+  .awardCont {
+    h2 {
+      font-size: 1rem !important;
+      letter-spacing: 0.3rem;
+      margin: 0.5rem;
+    }
+  }
+
+  .scrollerInner {
+    .timelineItem {
+      min-width: 200px;
+
+      .timelineContent {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+//tablet
+@include tablet {
+  .awardCont {
+    h2 {
+      font-size: 1.3rem !important;
+      letter-spacing: 0.3rem;
+      margin: 0.5rem;
+      -webkit-text-stroke: 0.5px #f1faee;
+    }
+  }
+
+  .scrollerInner {
+    .timelineItem {
+      min-width: 250px;
+
+      .timelineContent {
+        padding: 0.5rem;
+      }
+    }
+  }
+}

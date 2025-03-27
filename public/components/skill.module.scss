@@ -1,0 +1,160 @@
+.skillCont {
+  background-color: black;
+  padding: 3rem 2rem;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  // border: 1px red solid;
+
+  .skillHeader {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 2rem;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #f1faee;
+    margin-bottom: 3rem;
+  }
+
+  .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    .tagItem {
+      display: inline-flex; // Use inline-flex for "tag-like" appearance
+      align-items: center;
+      background-color: white;
+      border: 2px #e63946 solid;
+      border-radius: 12px; // Make them rounded like tags
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      gap: 8px;
+      padding: 1rem;
+
+      &:hover {
+        transform: translateY(-3px); // Hover effect
+      }
+      img {
+        max-width: 50px !important;
+      }
+
+      .techName {
+        font-size: 1rem;
+        font-weight: 600;
+        color: black;
+      }
+    }
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+//mobile
+@include mobile {
+  .skillCont {
+    padding: 2rem 1rem 2rem;
+    .skillHeader {
+      font-size: 1.3rem !important;
+      letter-spacing: 0.5rem;
+      -webkit-text-stroke: 1px #f1faee;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .tagContainer {
+      gap: 0.5rem;
+      .tagItem {
+        padding: 0.2rem 0.8rem 0.2rem;
+        border-radius: 6px;
+        border: 1px #e63946 solid;
+        img {
+          max-width: 0.8rem !important;
+        }
+        .techName {
+          font-size: 0.4rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@mixin phablet {
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+//phablet
+@include phablet {
+  .skillCont {
+    padding: 2rem;
+    .skillHeader {
+      font-size: 2rem !important;
+      letter-spacing: 0.5rem;
+      -webkit-text-stroke: 1px #f1faee;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .tagContainer {
+      gap: 0.5rem;
+      .tagItem {
+        padding: 0.2rem 0.8rem 0.2rem;
+        border-radius: 6px;
+        border: 1px #e63946 solid;
+        img {
+          max-width: 25px !important;
+        }
+        .techName {
+          font-size: 0.6rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+//tablet
+@include tablet {
+  .skillCont {
+    padding: 2rem;
+    .skillHeader {
+      font-size: 2.5rem !important;
+      letter-spacing: 0.5rem;
+      margin-bottom: 1rem;
+      -webkit-text-stroke: 1px #f1faee;
+      text-align: center;
+    }
+
+    .tagContainer {
+      gap: 0.5rem;
+      .tagItem {
+        padding: 0.2rem 0.8rem 0.2rem;
+        border-radius: 6px;
+        img {
+          max-width: 25px !important;
+        }
+        .techName {
+          font-size: 0.6rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

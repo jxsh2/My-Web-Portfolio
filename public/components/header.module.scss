@@ -1,0 +1,105 @@
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: black;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  z-index: 1000;
+  // border-bottom: 1px gray solid;
+  min-height: 8vh;
+  label,
+  li {
+    cursor: pointer;
+  }
+
+  label {
+    letter-spacing: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 24px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}
+
+//mobile
+@mixin mobile {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@include mobile {
+  .cont {
+    justify-content: center; // This centers all children within .cont
+    padding: 1rem; // Adjust padding for smaller screens
+
+    label {
+      text-align: center;
+      font-size: 0.8rem; // slightly reduce font size
+      letter-spacing: 0.5rem;
+    }
+    nav {
+      display: none; // hide li elements on mobile
+    }
+  }
+}
+
+@mixin phablet {
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+//phablet
+@include phablet {
+  .cont {
+    justify-content: center;
+    padding: 1rem;
+
+    label {
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.5rem;
+    }
+    nav {
+      display: none;
+    }
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+//tablet
+@include tablet {
+  .cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    label {
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.2rem;
+    }
+    li {
+      display: inline-block;
+      padding: 0 16px;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+  }
+}

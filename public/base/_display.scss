@@ -1,0 +1,29 @@
+// display properties
+.displayNone {
+    display: none !important;
+}
+
+.displayFlex {
+    display: flex !important;
+}
+
+// display subproperties
+.alignItemsCenter {
+    align-items: center !important;
+}
+
+.alignItemsEnd {
+    align-items: flex-end !important;
+}
+
+.justifyContentCenter {
+    justify-content: center !important;
+}
+
+.justifyContentSpaceBetween {
+    justify-content: space-between !important;
+}
+
+.flexDirectionColumn {
+    flex-direction: column !important;
+}

@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "_routes.js",
+    "routes/**/*.js",
+    "schemas/*.js"
+  ]
+}
