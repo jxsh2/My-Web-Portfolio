@@ -4,7 +4,7 @@
 
 *Description: This website was built to practice my skills using Next.js and SASS styling. It was also my fist time learning and applying resposive layout for a website*
 
-🛠️ Tech Used:
+**🛠️ Tech Used:**
 
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![SASS](https://img.shields.io/badge/SASS-hotpink?style=for-the-badge&logo=SASS&logoColor=white)](https://sass-lang.com/)
