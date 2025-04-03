@@ -4,7 +4,7 @@
 
 *Description: This website was built to practice my skills using Next.js and SASS styling. It was also my fist time learning and applying resposive layout for a website*
 
-🌐 Live Demo: https://bosi-portfolio.vercel.app/
+**🌐 Live Demo: https://bosi-portfolio.vercel.app**
 
 **🛠️ Tech Used:**
 
