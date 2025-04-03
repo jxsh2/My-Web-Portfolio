@@ -2,7 +2,7 @@
 
 **📌 Note: This website is currently on work and some information on resume and tech-stack are not updated.**
 
-*Description: This website was built to practice my skills using Next.js and SASS styling. It was also my fist time learning and applying resposive layout for a website*
+*Description: This website was built to practice my skills using Next.js and SASS for styling. It was also my first time learning and applying a responsive layout in a website.*
 
 **🌐 Live Demo: https://bosi-portfolio.vercel.app**
 
