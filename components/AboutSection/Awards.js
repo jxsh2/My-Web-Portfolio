@@ -3,7 +3,6 @@ import Image from "next/image";
 import style from "../../public/components/awards-about.module.scss";
 import sjcb from "../../public/static/images/school/sjcb_logo.png";
 import pup from "../../public/static/images/school/pup_logo.png";
-import { motion } from "framer-motion";
 
 const AwardsSection = () => {
   const achievements = [
@@ -64,23 +63,32 @@ const AwardsSection = () => {
     },
   ];
 
-  const loopedAchievements = [...achievements, ...achievements];
+  useEffect(() => {
+    function duplicateItems() {
+      const scroller = document.querySelector(`.${style.scrollerInner}`);
+      if (scroller && scroller.children.length <= achievements.length) {
+        // Ensure duplication only happens once
+        const scrollerContent = Array.from(scroller.children);
+
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute("aria-hidden", true);
+          scroller.appendChild(duplicatedItem);
+        });
+      }
+    }
+
+    if (typeof window !== "undefined") {
+      duplicateItems();
+    }
+  }, []);
 
   return (
     <div className={style.awardCont}>
       <h2 className={style.awardHeader}>My Achievements</h2>
-
       <div className={style.scrollerWrapper}>
-        <motion.div
-          className={style.scrollerInner}
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 50,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
-          {loopedAchievements.map((achievement, index) => (
+        <div className={style.scrollerInner}>
+          {achievements.map((achievement, index) => (
             <div key={index} className={style.timelineItem}>
               <div className={style.timelineContent}>
                 <div className={style.imageSection}>
@@ -98,7 +106,7 @@ const AwardsSection = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
