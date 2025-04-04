@@ -1,7 +1,5 @@
 import { Button, Divider, Icon } from "semantic-ui-react";
 import styles from "../../public/components/hero-section.module.scss";
-import Image from "next/image";
-import hero from "../../public/static/images/hero.png";
 
 const HeroSection = () => {
   return (
