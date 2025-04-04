@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className={styles.heroInfo}>
           <h5>CREATE. INNOVATE. LEARN. ELEVATE.</h5>
           <h1>
-            Hi, I'm <span>Idan</span>, Front End Developer
+            Hi, I'm <span>Idan</span>, Creative Developer
           </h1>
           <p>
             Crafting visually engaging and dynamic web experiences, one pixel at

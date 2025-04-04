@@ -3,7 +3,6 @@ import MainLayout from "layout/main";
 import HeroSection from "../components/HeroSection";
 import InfoSection from "../components/AboutSection/Info";
 import AwardsSection from "../components/AboutSection/Awards";
-import HobbiesSection from "../components/AboutSection/Hobbies";
 import SkillSection from "../components/SkillSection";
 import ProjectSection from "../components/ProjectSection";
 import ContactSection from "../components/ContactSection";
@@ -22,7 +21,6 @@ const Home = (props) => {
       <HeroSection {...props} />
       <InfoSection {...props} />
       <AwardsSection {...props} />
-      <HobbiesSection {...props} />
       <SkillSection {...props} />
       <ProjectSection {...props} />
       <ContactSection {...props} />

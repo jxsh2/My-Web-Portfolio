@@ -1,8 +1,8 @@
 .infoCont {
-  padding: 5rem 2rem;
+  padding: 3rem 3rem;
   margin: auto;
   align-items: center;
-  background-color: black;
+  background-color: #030303;
   // border: 1px red solid;
   width: 100%;
 
@@ -28,6 +28,7 @@
 
     img {
       max-width: 500px !important;
+      border-radius: 16px;
     }
   }
 

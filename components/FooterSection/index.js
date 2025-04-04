@@ -36,7 +36,6 @@ const FooterSection = () => {
         <a href="mailto:joshidabosi02@gmail.com">
           <Icon name="mail" size="large" />
         </a>
-        <h6>joshidabosi02@gmail.com</h6>
       </div>
       <div className={styles.credits}>
         <h6>© 2024 BOSI.PORTFOLIO . All rights reserved.</h6>
