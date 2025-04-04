@@ -1,18 +1,17 @@
 .infoCont {
   padding: 0 3rem 3rem;
-  margin: auto;
+
   align-items: center;
-  background-color: #dcd7c9;
   // border: 1px red solid;
 
   .infoTitle {
-    justify-self: center;
-    margin-bottom: 2rem;
+    justify-self: start;
 
     h2 {
       margin: 0;
       font-weight: 700;
       font-size: 1rem !important;
+      margin-bottom: 5rem;
     }
   }
 
@@ -34,6 +33,7 @@
   .infoContent {
     padding: 0;
     justify-self: start;
+    font-weight: 300;
     font-size: 1.2rem;
     line-height: 170%;
     text-align: justify;
@@ -50,7 +50,6 @@
 @include mobile {
   .infoCont {
     padding: 2rem 1rem;
-    margin: auto;
     align-items: center;
     // border: 1px red solid;
     // width: 90%;
@@ -58,12 +57,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem !important;
 
       h2 {
         font-size: 0.8rem !important;
-        margin: 0;
       }
     }
 

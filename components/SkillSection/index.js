@@ -47,7 +47,7 @@ const techStack = [
 const SkillSection = () => {
   return (
     <div className={style.skillCont} id="tech-stack">
-      <h2 className={style.skillHeader}>TECH STACK</h2>
+      <h2 className={style.skillHeader}>Tech Stack</h2>
       <div className={style.tagContainer}>
         {techStack.map((tech, index) => (
           <div key={index} className={style.tagItem}>

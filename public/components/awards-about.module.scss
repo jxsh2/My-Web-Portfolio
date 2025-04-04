@@ -1,5 +1,4 @@
 .awardCont {
-  background-color: #dcd7c9;
   text-align: center;
   width: 100%;
 
@@ -9,7 +8,7 @@
     color: #2c3930;
     justify-self: center;
     margin: 0 !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 5rem !important;
   }
 }
 
@@ -43,7 +42,7 @@
       display: flex;
       align-items: center;
       padding: 1rem 2rem 1rem;
-      background: #a27b5c;
+      background: white;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
@@ -60,14 +59,14 @@
         h3 {
           font-weight: 800;
           font-size: 0.7rem;
-          color: #dcd7c9;
+          color: #2c3930;
           margin: 0;
         }
 
         h4 {
           font-weight: 300 !important;
           font-size: 0.5rem !important;
-          color: #dcd7c9;
+          color: #2c3930;
           margin: 0;
         }
       }
@@ -86,7 +85,7 @@
   .awardCont {
     h2 {
       font-size: 0.8rem;
-      margin: 0.5rem;
+      margin-bottom: 2rem !important;
     }
   }
 
@@ -116,7 +115,7 @@
   .awardCont {
     h2 {
       font-size: 1rem !important;
-      margin: 0.5rem;
+      margin-bottom: 2rem !important;
     }
   }
 
@@ -142,7 +141,7 @@
   .awardCont {
     h2 {
       font-size: 1.3rem !important;
-      margin: 0.5rem;
+      margin-bottom: 2rem !important;
     }
   }
 

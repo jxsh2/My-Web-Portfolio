@@ -8,7 +8,6 @@ const InfoSection = () => {
       <div className="wrapper">
         <div className={styles.infoTitle}>
           <h2>About Me</h2>
-          {/* <Divider className="divider" /> */}
         </div>
         <div className={styles.infoGrid}>
           <div className={styles.infoContent}>

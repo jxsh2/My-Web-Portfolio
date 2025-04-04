@@ -6,13 +6,13 @@ const HeaderSection = () => {
     <div className={styles.cont}>
       {/* Make the label clickable and refresh the page */}
       <Link href="/" passHref>
-        <label style={{ cursor: "pointer" }}>bosi.portfolio</label>
+        <label style={{ cursor: "pointer" }}>idan josh bosi</label>
       </Link>
       <nav>
         <ul>
           <li>
             {/* Home link */}
-            <Link href="/" passHref>
+            <Link href="#home" passHref>
               <a>home</a>
             </Link>
           </li>

@@ -1,15 +1,12 @@
 .projectGrid {
   width: 100%;
   padding: 3rem 3rem;
-  background-color: #030303;
+
   h2 {
-    font-size: 3rem !important;
+    font-size: 1rem !important;
     font-weight: 700 !important;
-    letter-spacing: 2rem;
     text-align: center;
-    margin-bottom: 2rem;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px #f1faee;
+    margin-bottom: 5rem;
   }
 
   .gridCont {
@@ -29,7 +26,7 @@
         min-height: 300px !important;
         cursor: pointer;
         position: relative;
-        background-color: white;
+        background-color: #3f4f44;
         //   border: 1px red solid;
 
         h6,
@@ -40,14 +37,14 @@
 
         h6 {
           font-size: 1.1rem !important;
-          color: #27a25d !important;
+          color: white !important;
         }
 
         p {
           font-size: 0.7rem;
           font-weight: 500;
           position: relative;
-          color: black !important;
+          color: white !important;
           margin: 0 !important;
         }
 
@@ -67,7 +64,7 @@
           justify-content: space-between;
           gap: 3rem !important;
           padding: 0.5rem 1rem 0.5rem;
-          background-color: white;
+          background-color: #3f4f44;
 
           .stackCont {
             display: flex;
@@ -76,8 +73,8 @@
             min-height: 1.1rem;
 
             .techStack {
-              background-color: #e63946;
-              color: white;
+              background-color: white;
+              color: #3f4f44;
               font-weight: 600;
               border-radius: 6px;
               font-size: 0.6rem;
@@ -96,7 +93,7 @@
 
         .icon {
           font-size: 0.7rem !important; /* Adjust the icon size */
-          color: black;
+          color: white;
         }
       }
     }
@@ -119,10 +116,8 @@
     padding: 2rem 1rem 2rem;
 
     h2 {
-      font-size: 1.3rem !important;
-      letter-spacing: 0.5rem;
+      font-size: 0.8rem !important;
       margin-bottom: 1rem;
-      -webkit-text-stroke: 1px #f1faee;
     }
 
     .gridCont {
@@ -161,7 +156,6 @@
 
           .icon {
             font-size: 0.6rem !important; /* Adjust the icon size */
-            color: black;
           }
         }
       }
@@ -189,10 +183,8 @@
     padding: 2rem !important;
     align-items: center;
     h2 {
-      font-size: 2rem !important;
-      letter-spacing: 0.5rem;
-      margin-bottom: 1rem;
-      -webkit-text-stroke: 1px #f1faee;
+      font-size: 1rem !important;
+      margin-bottom: 2rem !important;
     }
 
     .gridCont {
@@ -249,10 +241,8 @@
     padding: 2rem !important;
     align-items: center;
     h2 {
-      font-size: 2.5rem !important;
-      letter-spacing: 0.5rem;
-      margin-bottom: 1rem;
-      -webkit-text-stroke: 1px #f1faee;
+      font-size: 1.3rem !important;
+      margin-bottom: 2rem !important;
     }
 
     .gridCont {

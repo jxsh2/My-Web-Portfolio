@@ -5,7 +5,7 @@ import arrow from "../../public/static/images/other/arrow.png";
 
 const HeroSection = () => {
   return (
-    <section className={styles.heroCont}>
+    <section className={styles.heroCont} id="home">
       <div className="wrapper">
         <div className={styles.heroInfo}>
           <h5>CREATE. INNOVATE. LEARN. ELEVATE.</h5>

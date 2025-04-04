@@ -20,6 +20,8 @@ $white: #2c3930;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  white-space: normal;
+  word-break: break-word;
 }
 
 html {
@@ -151,7 +153,7 @@ p {
 // -------------------------------
 
 button {
-  background-color: #a27b5c !important;
+  background-color: #3f4f44 !important;
   color: white !important;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -163,7 +165,7 @@ button {
   overflow: hidden;
 
   &:hover {
-    background-color: #3f4f44 !important; /* Darker hover effect */
+    background-color: #a27b5c !important; /* Darker hover effect */
     transform: scale(1.05); /* Slightly increase button size */
   }
 }

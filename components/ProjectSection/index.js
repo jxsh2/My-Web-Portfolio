@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Grid,
-  Card,
-  Button,
-  Label,
-  Icon,
-  Header,
-} from "semantic-ui-react";
+import { Grid, Card, Button, Label, Icon, Header } from "semantic-ui-react";
 import projects from "../ProjectSection/ProjectData";
 import style from "../../public/components/project-section.module.scss";
 import Image from "next/image";
@@ -31,7 +24,7 @@ const ProjectSection = () => {
   return (
     <section className={style.projectGrid} id="projects">
       <div className="wrapper">
-        <h2>PROJECTS</h2>
+        <h2>My Projects</h2>
         <Grid stackable columns={2} className={style.gridCont}>
           {projects.slice(0, itemsToShow).map((project, index) => (
             <Grid.Column key={index} className={style.colGrid}>

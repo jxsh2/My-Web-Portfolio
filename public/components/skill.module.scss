@@ -1,34 +1,29 @@
 .skillCont {
-  background-color: #030303;
   padding: 3rem 3rem;
   display: flex !important;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100% !important;
   // border: 1px red solid;
 
   .skillHeader {
-    font-size: 3rem !important;
+    font-size: 1rem !important;
     font-weight: 700 !important;
-    letter-spacing: 2rem;
     text-align: center;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px #f1faee;
-    margin-bottom: 3rem;
+    color: #2c3930;
+    margin-bottom: 5rem;
   }
 
   .tagContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.1rem !important;
     justify-content: center;
 
     .tagItem {
       display: inline-flex; // Use inline-flex for "tag-like" appearance
       align-items: center;
       background-color: white;
-      border: 3px #27a25d solid;
+      border: 3px #2c3930 solid;
       border-radius: 12px; // Make them rounded like tags
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
@@ -63,19 +58,17 @@
   .skillCont {
     padding: 2rem 1rem 2rem;
     .skillHeader {
-      font-size: 1.3rem !important;
-      letter-spacing: 0.5rem;
-      -webkit-text-stroke: 1px #f1faee;
+      font-size: 0.8rem !important;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem !important;
     }
 
     .tagContainer {
-      gap: 0.5rem;
+      gap: 0.1rem !important;
       .tagItem {
         padding: 0.2rem 0.8rem 0.2rem;
         border-radius: 6px;
-        border: 2px #27a25d solid;
+        border: 1px #2c3930 solid;
         img {
           max-width: 0.8rem !important;
         }
@@ -99,11 +92,9 @@
   .skillCont {
     padding: 2rem;
     .skillHeader {
-      font-size: 2rem !important;
-      letter-spacing: 0.5rem;
-      -webkit-text-stroke: 1px #f1faee;
+      font-size: 1rem !important;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem !important;
     }
 
     .tagContainer {
@@ -111,7 +102,7 @@
       .tagItem {
         padding: 0.2rem 0.8rem 0.2rem;
         border-radius: 6px;
-        border: 2px #27a25d solid;
+
         img {
           max-width: 25px !important;
         }
@@ -135,10 +126,8 @@
   .skillCont {
     padding: 2rem;
     .skillHeader {
-      font-size: 2.5rem !important;
-      letter-spacing: 0.5rem;
-      margin-bottom: 1rem;
-      -webkit-text-stroke: 1px #f1faee;
+      font-size: 1.3rem !important;
+      margin-bottom: 2rem !important;
       text-align: center;
     }
 
@@ -146,7 +135,7 @@
       gap: 0.5rem;
       .tagItem {
         padding: 0.2rem 0.8rem 0.2rem;
-        border-radius: 6px;
+        border: 1px #2c3930 solid;
         img {
           max-width: 25px !important;
         }
