@@ -31,7 +31,7 @@ const HeroSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button>Github</Button>
+                <Button>GitHub</Button>
               </a>
               <a
                 href="https://www.linkedin.com/in/idan-josh-bosi/"
