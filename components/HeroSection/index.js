@@ -17,7 +17,7 @@ const HeroSection = () => {
             a time, with precision and creativity.
           </p>
           <a
-            href="/static/pdf/[BSCS 3-4] Bosi_Resume.pdf"
+            href="/static/pdf/[UDPATED]BOSI_Resume_2024.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

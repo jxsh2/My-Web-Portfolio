@@ -1,5 +1,5 @@
 {
-  "name": "zynappse-nextjs-boilerplate",
+  "name": "nextjs-boilerplate",
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
