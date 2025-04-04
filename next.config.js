@@ -1,4 +1,3 @@
-const compose = require("next-compose-plugins");
 const path = require("path");
 
 const nextConfig = {
@@ -6,7 +5,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: [],
+    domains: [], // Add domains if you need external image sources, e.g., ["example.com"]
   },
   webpack: (config) => {
     config.resolve.alias["components"] = path.resolve(__dirname, "components");
@@ -20,9 +19,8 @@ const nextConfig = {
       __dirname,
       "package.json"
     );
-
     return config;
   },
 };
 
-module.exports = compose([], nextConfig);
+module.exports = nextConfig;
