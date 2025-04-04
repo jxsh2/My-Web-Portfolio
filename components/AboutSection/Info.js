@@ -1,4 +1,3 @@
-import { Divider } from "semantic-ui-react";
 import styles from "../../public/components/info-about.module.scss";
 import Image from "next/image";
 
@@ -9,26 +8,20 @@ const InfoSection = () => {
       <div className="wrapper">
         <div className={styles.infoTitle}>
           <h2>About Me</h2>
-          <Divider className="divider" />
+          {/* <Divider className="divider" /> */}
         </div>
         <div className={styles.infoGrid}>
+          <div className={styles.infoContent}>
+            I'm currently a 4th year Bachelor of Science in Computer Science
+            student at PUP Sta. Mesa, where I'm building a strong foundation in
+            software development and problem-solving. I enjoy creating beautiful
+            websites and also I have experience in video editing, combining
+            technical skills with creativity. Right now, I'm diving deeper into
+            full stack development while exploring the exciting fields of
+            machine learning and deep learning to broaden my expertise.
+          </div>
           <div className={styles.profileCont}>
             <Image className={styles.profile} src={travel} alt="profile" />
-          </div>
-          <div className={styles.infoContent}>
-            <h4>
-              4th Year College | Aspiring Full Stack Web Developer
-              <h6> Polytechnic University of the Philippines - Sta. Mesa</h6>
-              <h6> Computer Science Student</h6>
-            </h4>
-            <Divider className={styles.divider} />
-            <p>
-              I'm currently pursuing my computer science degree at the
-              Polytechnic University of the Philippines, blending technical
-              skills with a passion for optimizing systems. I have a strong
-              foundation in programming, web development, machine learning, deep
-              learning and video editing. UI/UX design, and video editing.
-            </p>
           </div>
         </div>
       </div>

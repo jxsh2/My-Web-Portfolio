@@ -86,7 +86,7 @@ const AwardsSection = () => {
 
   return (
     <div className={style.awardCont}>
-      <h2 className={style.awardHeader}>ACHIEVEMENTS</h2>
+      <h2 className={style.awardHeader}>My Achievements</h2>
       <div className={style.scrollerWrapper}>
         <div className={style.scrollerInner}>
           {achievements.map((achievement, index) => (

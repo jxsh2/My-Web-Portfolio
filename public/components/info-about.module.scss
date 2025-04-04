@@ -1,55 +1,42 @@
 .infoCont {
-  padding: 3rem 3rem;
+  padding: 0 3rem 3rem;
   margin: auto;
   align-items: center;
-  background-color: #030303;
+  background-color: #dcd7c9;
   // border: 1px red solid;
-  width: 100%;
 
   .infoTitle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 1rem;
+    justify-self: center;
+    margin-bottom: 2rem;
 
     h2 {
       margin: 0;
+      font-weight: 700;
+      font-size: 1rem !important;
     }
   }
 
   .infoGrid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
     grid-row: span 1;
     align-items: center;
     gap: 1rem;
     // border: 1px red solid;
 
     img {
-      max-width: 500px !important;
+      max-width: 400px !important;
       border-radius: 16px;
+      justify-self: end !important;
     }
   }
 
   .infoContent {
-    h4 {
-      margin-bottom: 0.6rem;
-      font-size: 1.5rem;
-    }
-    h6 {
-      margin: 0;
-      font-size: 0.8rem;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 150%;
-    }
-
-    p {
-      margin-top: 0.6rem;
-      font-size: 0.9rem;
-      line-height: 170%;
-    }
+    padding: 0;
+    justify-self: start;
+    font-size: 1.2rem;
+    line-height: 170%;
+    text-align: justify;
   }
 }
 
@@ -75,33 +62,22 @@
       margin-bottom: 1rem;
 
       h2 {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
         margin: 0;
       }
     }
 
     .infoGrid {
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
+      gap: 0;
     }
 
     .infoContent {
       text-align: center;
-      h4 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-      h6 {
-        font-size: 0.5rem;
-        margin: 0;
-        font-weight: 300;
-        font-style: italic;
-      }
-
-      p {
-        font-size: 0.6rem;
-        margin-top: 0.5em;
-      }
+      font-size: 0.6rem;
+      line-height: 170%;
+      text-align: justify;
     }
   }
 }
@@ -136,26 +112,14 @@
 
     .infoGrid {
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 
     .infoContent {
       text-align: center;
-      h4 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-      h6 {
-        font-size: 0.6rem;
-        margin: 0;
-        font-weight: 300;
-        font-style: italic;
-      }
-
-      p {
-        font-size: 0.7rem;
-        margin-top: 0.5rem;
-      }
+      font-size: 0.7rem;
+      line-height: 170%;
+      text-align: justify;
     }
   }
 }
@@ -186,21 +150,9 @@
     }
 
     .infoContent {
-      h4 {
-        font-size: 0.8em;
-        margin-bottom: 0.6rem;
-      }
-      h6 {
-        font-size: 0.6rem;
-        margin: 0;
-        font-weight: 300;
-        font-style: italic;
-      }
-
-      p {
-        font-size: 0.7rem;
-        margin-top: 0.6rem;
-      }
+      font-size: 0.8rem;
+      line-height: 170%;
+      text-align: justify;
     }
   }
 }

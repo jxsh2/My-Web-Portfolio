@@ -6,12 +6,12 @@ $font-noto: "Noto Sans", sans-serif;
 $font-poppins: "Poppins", sans-serif;
 
 // Colors
-$dark-blue: #082032;
-$medium-blue: #457b9d;
+$dark-blue: #2c3930;
+$medium-blue: #2c3930;
 // $orange: #e63946;
-$orange: #27a25d;
-$light-blue: #a8dadc;
-$white: #f1faee;
+$orange: #a27b5c;
+$light-blue: #2c3930;
+$white: #2c3930;
 
 // Reset & Global Base Styles
 * {
@@ -30,7 +30,7 @@ html {
 html,
 body {
   font-family: $font-poppins !important;
-  background-color: #030303;
+  background-color: #dcd7c9;
   color: $white;
   font-size: 1.25rem;
   height: 100%;
@@ -151,7 +151,7 @@ p {
 // -------------------------------
 
 button {
-  background-color: #27a25d !important;
+  background-color: #a27b5c !important;
   color: white !important;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -163,7 +163,7 @@ button {
   overflow: hidden;
 
   &:hover {
-    background-color: #2cbf6b !important; /* Darker hover effect */
+    background-color: #3f4f44 !important; /* Darker hover effect */
     transform: scale(1.05); /* Slightly increase button size */
   }
 }

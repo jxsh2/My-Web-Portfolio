@@ -1,9 +1,8 @@
 .heroCont {
-  padding: 7rem 1rem;
-  display: flex;
+  padding: 6rem 3rem;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 0 !important;
 
   // img {
   //   max-width: 600px !important;
@@ -13,7 +12,7 @@
     h5 {
       font-weight: 700;
       font-size: 5.5rem;
-      color: #2cbf6b;
+      color: #2c3930;
     }
 
     h1 {
@@ -22,7 +21,7 @@
 
       span {
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px white;
+        -webkit-text-stroke: 1px #2c3930;
       }
     }
     p {
@@ -30,6 +29,12 @@
     }
     button {
       font-size: 1rem;
+    }
+
+    .arrow {
+      max-width: 32px;
+      margin-top: 32px;
+      justify-self: end;
     }
   }
 }
@@ -69,6 +74,11 @@
       button {
         font-size: 0.6rem;
       }
+      .arrow {
+        max-width: 16px;
+        margin-top: 32px;
+        justify-self: end;
+      }
     }
   }
 }
@@ -103,6 +113,12 @@
 
       button {
         font-size: 0.7rem;
+      }
+
+      .arrow {
+        max-width: 16px;
+        margin-top: 32px;
+        justify-self: end;
       }
     }
   }
@@ -142,6 +158,11 @@
 
       button {
         font-size: 0.8rem;
+      }
+      .arrow {
+        max-width: 32px;
+        margin-top: 32px;
+        justify-self: end;
       }
     }
   }
