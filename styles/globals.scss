@@ -38,8 +38,9 @@ body {
 }
 
 #__next {
-  height: 100%; /* Match body height */
-  overflow-y: auto; /* Allow scrolling within Next.js content */
+  height: 100%;
+  overflow-y: auto;
+  padding: 0;
 }
 
 a {

@@ -6,38 +6,42 @@ const HeaderSection = () => {
     <div className={styles.cont}>
       {/* Make the label clickable and refresh the page */}
       <Link href="/" passHref>
-        <label style={{ cursor: "pointer" }}>BOSI.PORTFOLIO</label>
+        <label style={{ cursor: "pointer" }}>bosi.portfolio</label>
       </Link>
       <nav>
         <ul>
           <li>
             {/* Home link */}
             <Link href="/" passHref>
-              <a>HOME</a>
+              <a>home</a>
             </Link>
           </li>
+          <li>.</li>
           <li>
             {/* About link */}
             <Link href="#about" passHref>
-              <a>ABOUT</a>
+              <a>about</a>
             </Link>
           </li>
+          <li>.</li>
           <li>
             {/* Skills link */}
             <Link href="#tech-stack" passHref>
-              <a>SKILLS</a>
+              <a>skills</a>
             </Link>
           </li>
+          <li>.</li>
           <li>
             {/* Projects link */}
             <Link href="#projects" passHref>
-              <a>PROJECTS</a>
+              <a>projects</a>
             </Link>
           </li>
+          <li>.</li>
           <li>
             {/* Contact link */}
             <Link href="#contact" passHref>
-              <a>CONTACT</a>
+              <a>contact</a>
             </Link>
           </li>
         </ul>
