@@ -83,7 +83,7 @@
 @include mobile {
   .awardCont {
     h2 {
-      font-size: 0.8rem;
+      font-size: 0.8rem !important;
       margin-bottom: 2rem !important;
     }
   }
@@ -113,7 +113,7 @@
 @include phablet {
   .awardCont {
     h2 {
-      font-size: 1rem !important;
+      font-size: 0.8rem !important;
       margin-bottom: 2rem !important;
     }
   }
@@ -139,7 +139,7 @@
 @include tablet {
   .awardCont {
     h2 {
-      font-size: 1.3rem !important;
+      font-size: 1rem;
       margin-bottom: 2rem !important;
     }
   }
