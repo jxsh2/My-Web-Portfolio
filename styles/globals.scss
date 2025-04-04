@@ -33,6 +33,8 @@ body {
   background-color: #030303;
   color: $white;
   font-size: 1.25rem;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -155,7 +157,7 @@ button {
   overflow: hidden;
 
   &:hover {
-    background-color: #2CBF6B !important; /* Darker hover effect */
+    background-color: #2cbf6b !important; /* Darker hover effect */
     transform: scale(1.05); /* Slightly increase button size */
   }
 }
