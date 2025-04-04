@@ -25,7 +25,7 @@ $white: #2c3930;
 }
 
 html {
-  scroll-padding-top: 10vh;
+  scroll-padding-top: 8vh;
   scroll-behavior: smooth;
 }
 
@@ -176,11 +176,12 @@ img {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   // border: 1px red solid;
   width: 100%;
 }
+
 .divider {
   flex-grow: 1;
   background-color: $orange !important;
