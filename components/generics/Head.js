@@ -2,7 +2,7 @@
 import Head from "next/head";
 
 export default function HeadComponent({
-  title = "Bosi Portolio",
+  title = "Idan Josh Bosi",
   description = "My Personal Website",
 }) {
   return (
