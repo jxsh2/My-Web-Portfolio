@@ -11,5 +11,3 @@
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![SASS](https://img.shields.io/badge/SASS-hotpink?style=for-the-badge&logo=SASS&logoColor=white)](https://sass-lang.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-
-![portfolio](https://github.com/user-attachments/assets/55a6ad5a-cc48-4bd2-8bc3-3c382a26bf3b)
