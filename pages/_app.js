@@ -1,5 +1,4 @@
 /** LIBRARIES */
-import { useEffect } from "react";
 import Head from "next/head";
 import HeaderSection from "../components/Header";
 import FooterSection from "../components/FooterSection";

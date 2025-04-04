@@ -17,7 +17,6 @@ const Home = (props) => {
 
   return (
     <MainLayout {...mainLayoutProps}>
-      {/* <HomeComponent {...props} /> */}
       <HeroSection {...props} />
       <InfoSection {...props} />
       <AwardsSection {...props} />

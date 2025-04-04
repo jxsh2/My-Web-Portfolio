@@ -1,7 +1,10 @@
 /** LIBRARIES */
 import Head from "next/head";
 
-export default function HeadComponent({ title, description }) {
+export default function HeadComponent({
+  title = "Bosi Portolio",
+  description = "My Personal Website",
+}) {
   return (
     <Head>
       <title>{title}</title>
