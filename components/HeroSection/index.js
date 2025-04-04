@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className={styles.heroInfo}>
           <h5>CREATE. INNOVATE. LEARN. ELEVATE.</h5>
           <h1>
-            Hi, I'm <span>Idan</span>, Creative Developer
+            Hi, I'm <span>Idan Josh Bosi</span>, Creative Developer
           </h1>
           <p>
             Crafting visually engaging and dynamic web experiences, one pixel at
@@ -21,13 +21,27 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button>RESUME</Button>
+            <Button>Resume</Button>
+          </a>
+          <a
+            href="https://github.com/jxsh2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Github</Button>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/idan-josh-bosi/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>LinkedIn</Button>
           </a>
         </div>
-
+        {/* 
         <div className={styles.heroImage}>
           <Image className={styles.hero} src={hero} alt="Profile" />
-        </div>
+        </div> */}
       </section>
     </div>
   );

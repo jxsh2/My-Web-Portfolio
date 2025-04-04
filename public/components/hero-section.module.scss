@@ -1,29 +1,28 @@
 .heroCont {
-  padding: 3rem 3rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding: 7rem 1rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   margin: auto;
 
-  img {
-    max-width: 600px !important;
-  }
+  // img {
+  //   max-width: 600px !important;
+  // }
   //   border: 1px red solid;
   .heroInfo {
     h5 {
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 5.5rem;
       color: #2cbf6b;
     }
 
     h1 {
-      font-weight: 700;
+      font-weight: 500;
       line-height: 4rem;
 
       span {
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px #27a25d;
+        -webkit-text-stroke: 1px white;
       }
     }
     p {
@@ -48,7 +47,7 @@
 //mobile
 @include mobile {
   .heroCont {
-    padding: 6rem 1rem 3rem;
+    padding: 5rem 1rem 3rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -57,23 +56,24 @@
     gap: 0.5rem;
 
     .heroInfo {
-      text-align: center;
+      text-align: left;
       h5 {
-        font-size: 0.5rem;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
       }
 
       h1 {
-        font-size: 1.5rem;
-
-        line-height: 170%;
+        font-size: 1rem;
+        line-height: 120%;
+        margin-bottom: 0.5rem;
       }
       p {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         margin-bottom: 0.5rem;
       }
 
       button {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
       }
     }
   }
@@ -93,7 +93,7 @@
 //phablet
 @include phablet {
   .heroCont {
-    padding: 6rem 2rem;
+    padding: 5rem 1rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
