@@ -8,6 +8,11 @@ import pup from "../../public/static/images/school/pup_logo.png";
 const AwardsSection = () => {
   const achievements = [
     {
+      details: "4th Year 1st Semester (2024-2025)",
+      title: "President’s Lister",
+      image: pup,
+    },
+    {
       details: "3RD Year 2nd Semester (2023-2024)",
       title: "Dean’s Lister",
       image: pup,

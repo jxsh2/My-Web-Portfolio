@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
+  padding: 16px 5%;
   background-color: black;
   width: 100%;
   margin: auto;
   position: fixed;
   z-index: 1000;
   // border-bottom: 1px gray solid;
-  min-height: 8vh;
+  min-height: 16px;
   label,
   li {
     cursor: pointer;

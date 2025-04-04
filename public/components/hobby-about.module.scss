@@ -2,7 +2,7 @@
   padding: 5rem 2rem;
   margin: auto !important;
   align-items: center;
-  background-color: #064663;
+  background-color: black;
   width: 100%;
 
   .titleCont {
@@ -24,10 +24,10 @@
 
       .interestCont {
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        align-items: center !important;
+        justify-content: center;
         // border: 1px solid red;
-        background-color: #f9dbba;
+        background-color: #f1faee;
         padding: 0.5rem !important;
         gap: 8px;
         border-radius: 6px;

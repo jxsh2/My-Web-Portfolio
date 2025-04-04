@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div className="wrapper">
       <section className={styles.heroCont}>
         <div className={styles.heroInfo}>
-          <h5>TURNING YOUR IDEAS INTO DIGITAL REALITY</h5>
+          <h5>CREATE. INNOVATE. LEARN. ELEVATE.</h5>
           <h1>
             Hi, I'm <span>Idan</span>, Front End Developer
           </h1>

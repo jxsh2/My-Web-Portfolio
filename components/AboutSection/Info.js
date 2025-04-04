@@ -17,7 +17,7 @@ const InfoSection = () => {
           </div>
           <div className={styles.infoContent}>
             <h4>
-              4th Year College | Aspiring Web Developer
+              4th Year College | Aspiring Full Stack Web Developer
               <h6> Polytechnic University of the Philippines - Sta. Mesa</h6>
               <h6> Computer Science Student</h6>
             </h4>
@@ -26,9 +26,8 @@ const InfoSection = () => {
               I'm currently pursuing my computer science degree at the
               Polytechnic University of the Philippines, blending technical
               skills with a passion for optimizing systems. I have a strong
-              foundation in programming, database management, machine learning,
-              UI/UX design, and video editing. Feel free to check out my resume
-              and projects or get in touch with me.
+              foundation in programming, web development, machine learning, deep
+              learning and video editing. UI/UX design, and video editing.
             </p>
           </div>
         </div>
