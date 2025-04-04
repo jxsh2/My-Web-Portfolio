@@ -18,12 +18,11 @@
     flex-wrap: wrap;
     gap: 0.1rem !important;
     justify-content: center;
-
     .tagItem {
       display: inline-flex; // Use inline-flex for "tag-like" appearance
       align-items: center;
       background-color: white;
-      border: 3px #2c3930 solid;
+      border: 2px #2c3930 solid;
       border-radius: 12px; // Make them rounded like tags
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
@@ -39,8 +38,8 @@
       }
 
       .techName {
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
         color: black;
       }
     }
@@ -73,8 +72,7 @@
           max-width: 0.8rem !important;
         }
         .techName {
-          font-size: 0.4rem;
-          font-weight: 500;
+          font-size: 0.4rem !important;
         }
       }
     }
@@ -101,14 +99,11 @@
       gap: 0.5rem;
       .tagItem {
         padding: 0.2rem 0.8rem 0.2rem;
-        border-radius: 6px;
-
         img {
           max-width: 25px !important;
         }
         .techName {
-          font-size: 0.6rem;
-          font-weight: 500;
+          font-size: 0.6rem !important;
         }
       }
     }
@@ -140,8 +135,7 @@
           max-width: 25px !important;
         }
         .techName {
-          font-size: 0.6rem;
-          font-weight: 500;
+          font-size: 0.8rem !important;
         }
       }
     }
