@@ -21,7 +21,7 @@ const projects = [
     description:
       "Interactive site that transforms traditional paperwork into a digital format.",
     image: idfrom,
-    link: "https://jxsh2.github.io/Final_Project_WEBDEV_BC_PUPAFID/",
+    link: "https://jxsh2.github.io/PUPAFID-System",
   },
   {
     header: "Sentiment Analyzer",
@@ -62,7 +62,7 @@ const projects = [
     header: "Mini-Diary Website",
     description: "Simple diary website for personal use.",
     image: diary,
-    link: "https://jxsh2.github.io/ADET-SIMPLE-APP-W-DB/",
+    link: "https://jxsh2.github.io/My-Memoir",
   },
   {
     header: "Tactic Tiles",
