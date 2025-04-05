@@ -2,23 +2,20 @@
 
 .infoCont {
   padding: 3rem 3rem;
-  align-items: center;
 
   .infoTitle {
-    justify-self: center;
-    margin-bottom: 5rem;
-
-    h2 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1rem !important;
-    }
+    margin-top: 0rem !important;
+    margin-bottom: 46px;
+    font-weight: 700 !important;
+    font-size: 5rem !important;
+    align-items: flex-start;
+    color: #a27b5c;
   }
 
   .infoGrid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     column-gap: 3rem; // ✅ creates more space between text and profile
     row-gap: 2rem; // ✅ adds spacing for smaller screens when stacked
@@ -29,31 +26,39 @@
     justify-self: start;
     font-weight: 300;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 170%;
     text-align: justify;
   }
 
   .profileCont {
     position: relative;
     width: 100%;
-    height: 300px;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+
+    img,
+    .profile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
 
     @include abstract.mobile {
-      height: 200px;
+      max-width: 200px;
+      aspect-ratio: 1 / 1;
     }
 
     @include abstract.phablet {
-      height: 250px;
+      max-width: 250px;
+      aspect-ratio: 1 / 1;
     }
 
     @include abstract.tablet {
-      height: 250px;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
     }
-  }
-
-  .profile {
-    border-radius: 16px;
-    object-fit: cover;
   }
 }
 
@@ -63,14 +68,9 @@
     padding: 2rem 1rem;
 
     .infoTitle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem !important;
-
-      h2 {
-        font-size: 0.8rem !important;
-      }
+      align-items: center !important;
+      font-size: 1rem !important;
+      margin-bottom: 8px;
     }
 
     .infoGrid {
@@ -100,12 +100,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 2rem !important;
-
-      h2 {
-        font-size: 0.8rem !important;
-        margin: 0;
-      }
+      margin-bottom: 8px !important;
+      font-size: 1.2rem !important;
+      margin: 0;
     }
 
     .infoGrid {
@@ -130,13 +127,9 @@
     align-items: center;
 
     .infoTitle {
-      gap: 8px;
-      margin-bottom: 2rem !important;
-
-      h2 {
-        font-size: 1rem !important;
-        margin: 0;
-      }
+      margin-bottom: 24px !important;
+      font-size: 3rem !important;
+      margin: 0;
     }
 
     .infoContent {

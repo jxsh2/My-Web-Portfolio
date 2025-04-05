@@ -11,12 +11,6 @@ import ppl from "../../public/static/images/projects/ppl.png";
 
 const projects = [
   {
-    header: "CleverCash",
-    description:
-      "Financial management platform designed to track budgets and transactions.",
-    image: clevercash,
-  },
-  {
     header: "PUPAFID",
     description:
       "Interactive site that transforms traditional paperwork into a digital format.",
@@ -30,10 +24,23 @@ const projects = [
     image: automata,
   },
   {
+    header: "CleverCash",
+    description:
+      "Financial management platform designed to track budgets and transactions.",
+    image: clevercash,
+    link: "https://clever-cash.vercel.app/",
+  },
+  {
     header: "Start-Up Lexer",
     description:
       "Application that supports a custom programming language, focusing on lexical analysis.",
     image: lexer,
+  },
+  {
+    header: "Mini-Diary Website",
+    description: "Simple diary website for personal use.",
+    image: diary,
+    link: "https://jxsh2.github.io/My-Memoir",
   },
   {
     header: "Start-Up Syntax Analyzer",
@@ -57,12 +64,6 @@ const projects = [
     header: "Black Hole Simulator",
     description: "Desktop application that simulates black hole physics.",
     image: blackhole,
-  },
-  {
-    header: "Mini-Diary Website",
-    description: "Simple diary website for personal use.",
-    image: diary,
-    link: "https://jxsh2.github.io/My-Memoir",
   },
   {
     header: "Tactic Tiles",

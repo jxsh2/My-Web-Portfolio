@@ -14,7 +14,7 @@ const InfoSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <h2>About Me</h2>
+          About Me
         </motion.div>
 
         <div className={styles.infoGrid}>
