@@ -1,43 +1,56 @@
 import styles from "../../public/components/header.module.scss";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const navItems = [
+  { label: "home", href: "#home" },
+  { label: "about", href: "#about" },
+  { label: "skills", href: "#tech-stack" },
+  { label: "projects", href: "#projects" },
+  { label: "contact", href: "#contact" },
+];
 
 const HeaderSection = () => {
   return (
-    <div className={styles.cont}>
-      {/* Make the label clickable and refresh the page */}
+    <motion.div
+      className={styles.cont}
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <Link href="/" passHref>
-        <label
+        <motion.label
           style={{ cursor: "pointer" }}
           onClick={() => (window.location.href = "/")}
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           idan josh bosi
-        </label>
+        </motion.label>
       </Link>
 
       <nav>
         <ul>
-          <li>
-            <Link href="#home">home</Link>
-          </li>
-          <li>-</li>
-          <li>
-            <Link href="#about">about</Link>
-          </li>
-          <li>-</li>
-          <li>
-            <Link href="#tech-stack">skills</Link>
-          </li>
-          <li>-</li>
-          <li>
-            <Link href="#projects">projects</Link>
-          </li>
-          <li>-</li>
-          <li>
-            <Link href="#contact">contact</Link>
-          </li>
+          {navItems.map((item, index) => (
+            <motion.li
+              key={item.label}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Link href={item.href}>
+                <motion.span transition={{ duration: 0.2 }}>
+                  {item.label}
+                </motion.span>
+              </Link>
+              {index < navItems.length - 1 && (
+                <span style={{ margin: "0 10px" }}>-</span>
+              )}
+            </motion.li>
+          ))}
         </ul>
       </nav>
-    </div>
+    </motion.div>
   );
 };
+
 export default HeaderSection;

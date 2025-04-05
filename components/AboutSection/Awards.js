@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import style from "../../public/components/awards-about.module.scss";
 import sjcb from "../../public/static/images/school/sjcb_logo.png";
 import pup from "../../public/static/images/school/pup_logo.png";
 
 const AwardsSection = () => {
+  const controls = useAnimation();
+  const [items, setItems] = useState([]);
   const achievements = [
     {
       details: "4th Year 1st Semester (2024-2025)",
@@ -64,39 +67,47 @@ const AwardsSection = () => {
   ];
 
   useEffect(() => {
-    function duplicateItems() {
-      const scroller = document.querySelector(`.${style.scrollerInner}`);
-      if (scroller && scroller.children.length <= achievements.length) {
-        // Ensure duplication only happens once
-        const scrollerContent = Array.from(scroller.children);
-
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", true);
-          scroller.appendChild(duplicatedItem);
-        });
-      }
-    }
-
-    if (typeof window !== "undefined") {
-      duplicateItems();
-    }
+    setItems([...achievements, ...achievements]);
   }, []);
+
+  useEffect(() => {
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 15,
+        ease: "linear",
+        repeat: Infinity,
+      },
+    });
+  }, [controls]);
 
   return (
     <div className={style.awardCont}>
-      <h2 className={style.awardHeader}>My Achievements</h2>
+      <motion.h2
+        className={style.awardHeader}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.6 }}
+      >
+        My Achievements
+      </motion.h2>
+
       <div className={style.scrollerWrapper}>
-        <div className={style.scrollerInner}>
-          {achievements.map((achievement, index) => (
+        <motion.div
+          className={style.scrollerInner}
+          animate={controls}
+          initial={{ x: 0 }}
+        >
+          {items.map((achievement, index) => (
             <div key={index} className={style.timelineItem}>
               <div className={style.timelineContent}>
                 <div className={style.imageSection}>
                   <Image
                     src={achievement.image}
                     alt={`${achievement.title} image`}
-                    width={90}
-                    height={90}
+                    width={60}
+                    height={60}
                   />
                 </div>
                 <div className={style.textSection}>
@@ -106,7 +117,7 @@ const AwardsSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

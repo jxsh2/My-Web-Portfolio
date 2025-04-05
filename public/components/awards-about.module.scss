@@ -21,17 +21,7 @@
 
 .scrollerInner {
   display: flex;
-  animation: scroll 40s linear infinite;
   gap: 1rem;
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 
   .timelineItem {
     min-width: 300px;
@@ -97,7 +87,6 @@
   }
 
   .scrollerInner {
-    animation: scroll 20s linear infinite;
     gap: 0.5rem;
 
     .timelineItem {
