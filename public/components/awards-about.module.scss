@@ -22,6 +22,7 @@
 .scrollerInner {
   display: flex;
   gap: 1rem;
+  width: max-content;
 
   .timelineItem {
     min-width: 300px;

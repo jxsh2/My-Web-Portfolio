@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "../../public/components/skill.module.scss";
+import { motion } from "framer-motion";
 
 // images
 import c from "../../public/static/images/tech-stack/c.png";
@@ -47,21 +48,54 @@ const techStack = [
 const SkillSection = () => {
   return (
     <div className={style.skillCont} id="tech-stack">
-      <h2 className={style.skillHeader}>Tech Stack</h2>
-      <div className={style.tagContainer}>
+      <motion.h2
+        className={style.skillHeader}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.6 }}
+      >
+        Tech Stack
+      </motion.h2>
+
+      <motion.div
+        className={style.tagContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ staggerChildren: 0.05 }}
+      >
         {techStack.map((tech, index) => (
-          <div key={index} className={style.tagItem}>
-            <div className={style.iconWrapper}>
+          <motion.div
+            key={index}
+            className={style.tagItem}
+            variants={{
+              hidden: { opacity: 0, scale: 0.8, y: 20 },
+              visible: { opacity: 1, scale: 1, y: 0 },
+            }}
+            whileHover={{ scale: 1.1, y: -4 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div
+              className={style.iconWrapper}
+              animate={{
+                y: [0, -2, 0],
+              }}
+              transition={{
+                duration: 3,
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+            >
               <Image
                 src={tech.image}
                 alt={tech.name}
                 className={style.techImage}
               />
-            </div>
-            {/* <p className={style.techName}>{tech.name}</p> */}
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

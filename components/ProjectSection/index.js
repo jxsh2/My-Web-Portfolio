@@ -3,6 +3,7 @@ import { Grid, Button, Icon, Modal } from "semantic-ui-react";
 import projects from "../ProjectSection/ProjectData";
 import style from "../../public/components/project-section.module.scss";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const ProjectSection = () => {
   const initialItemsToShow = 2;
@@ -37,7 +38,15 @@ const ProjectSection = () => {
   return (
     <section className={style.projectGrid} id="projects">
       <div className="wrapper">
-        <h2>My Projects</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          My Projects
+        </motion.h2>
+
         <Grid stackable columns={2} className={style.gridCont}>
           {projects.slice(0, itemsToShow).map((project, index) => (
             <Grid.Column key={index} className={style.colGrid}>

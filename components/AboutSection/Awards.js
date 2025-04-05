@@ -74,7 +74,7 @@ const AwardsSection = () => {
     controls.start({
       x: ["0%", "-50%"],
       transition: {
-        duration: 15,
+        duration: 120,
         ease: "linear",
         repeat: Infinity,
       },

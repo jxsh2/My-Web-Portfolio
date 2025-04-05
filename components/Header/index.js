@@ -16,7 +16,7 @@ const HeaderSection = () => {
       className={styles.cont}
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 3 }}
     >
       <Link href="/" passHref>
         <motion.label

@@ -1,10 +1,11 @@
 @use "../abstracts/__abstracts-dir" as abstract;
 
 .skillCont {
-  padding: 3rem 3rem;
+  padding: 3rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
 
   .skillHeader {
     font-size: 1rem;
@@ -15,34 +16,40 @@
   }
 
   .tagContainer {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
     justify-content: center;
-    gap: 4px;
+    gap: 2rem 2.5rem;
 
     .tagItem {
-      background-color: white;
-      border: 2px solid #2c3930;
-      border-radius: 12px;
-      padding: 0.8rem;
+      width: 80px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
-      width: 64px;
-      height: 64px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      width: 80px; // increase from 64px
-      height: 80px; // increase height too
-      padding: 0.8rem;
-      &:hover {
-        transform: scale(1.05);
+
+      .iconWrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        animation: floatIcon 3s ease-in-out infinite;
       }
 
       .techImage {
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
         object-fit: contain;
+      }
+
+      &:hover .iconWrapper {
+        transform: scale(1.1) translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       }
     }
   }
@@ -59,12 +66,22 @@
     }
 
     .tagContainer {
-      gap: 2px;
+      grid-template-columns: repeat(3, 60px);
+      gap: 1.2rem;
+
       .tagItem {
-        width: 48px;
-        height: 48px;
-        padding: 0.5rem;
-        border-radius: 8px;
+        width: 56px;
+        height: 56px;
+
+        .iconWrapper {
+          width: 48px;
+          height: 48px;
+        }
+
+        .techImage {
+          width: 70%;
+          height: 70%;
+        }
       }
     }
   }
@@ -81,11 +98,17 @@
     }
 
     .tagContainer {
-      gap: 2px;
+      grid-template-columns: repeat(5, 60px);
+      gap: 1.6rem;
+
       .tagItem {
-        width: 56px;
-        height: 56px;
-        padding: 0.7rem;
+        width: 64px;
+        height: 64px;
+
+        .iconWrapper {
+          width: 56px;
+          height: 56px;
+        }
       }
     }
   }
@@ -102,11 +125,16 @@
     }
 
     .tagContainer {
-      gap: 2px;
+      gap: 1.2rem;
+
       .tagItem {
-        width: 80px;
-        height: 80px;
-        padding: 0.7rem;
+        width: 72px;
+        height: 72px;
+
+        .iconWrapper {
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }
