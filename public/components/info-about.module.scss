@@ -1,12 +1,13 @@
+@use "../abstracts/__abstracts-dir" as abstract;
+
 .infoCont {
   padding: 3rem 3rem;
-
   align-items: center;
-  // border: 1px red solid;
 
   .infoTitle {
     justify-self: center;
     margin-bottom: 5rem;
+
     h2 {
       margin: 0;
       font-weight: 700;
@@ -17,41 +18,50 @@
   .infoGrid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-row: span 1;
     align-items: center;
     gap: 1rem;
-    // border: 1px red solid;
-
-    img {
-      max-width: 400px !important;
-      border-radius: 16px;
-      justify-self: end !important;
-    }
+    column-gap: 3rem; // ✅ creates more space between text and profile
+    row-gap: 2rem; // ✅ adds spacing for smaller screens when stacked
   }
 
   .infoContent {
     padding: 0;
     justify-self: start;
     font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 170%;
+    font-size: 1rem;
+    line-height: 150%;
     text-align: justify;
   }
-}
 
-//mobile
-@mixin mobile {
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    @content;
+  .profileCont {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    @include abstract.mobile {
+      height: 200px;
+    }
+
+    @include abstract.phablet {
+      height: 250px;
+    }
+
+    @include abstract.tablet {
+      height: 250px;
+    }
+  }
+
+  .profile {
+    border-radius: 16px;
+    object-fit: cover;
   }
 }
 
-@include mobile {
+// Mobile
+@include abstract.mobile {
   .infoCont {
     padding: 2rem 1rem;
-    align-items: center;
-    // border: 1px red solid;
-    // width: 90%;
+
     .infoTitle {
       display: flex;
       align-items: center;
@@ -66,7 +76,7 @@
     .infoGrid {
       display: flex;
       flex-direction: column-reverse;
-      gap: 0;
+      gap: 1rem;
     }
 
     .infoContent {
@@ -78,20 +88,12 @@
   }
 }
 
-@mixin phablet {
-  @media screen and (min-width: 481px) and (max-width: 767px) {
-    @content;
-  }
-}
-
-//phablet
-@include phablet {
+// Phablet
+@include abstract.phablet {
   .infoCont {
     padding: 3rem 2rem;
     margin: auto;
     align-items: center;
-    // border: 1px red solid;
-    // width: 90%;
 
     .infoTitle {
       display: flex;
@@ -120,20 +122,12 @@
   }
 }
 
-@mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    @content;
-  }
-}
-
-//tablet
-@include tablet {
+// Tablet
+@include abstract.tablet {
   .infoCont {
     padding: 3rem 2rem;
     margin: auto;
     align-items: center;
-    // border: 1px red solid;
-    // width: 90%;
 
     .infoTitle {
       gap: 8px;
@@ -146,8 +140,8 @@
     }
 
     .infoContent {
-      font-size: 0.8rem;
-      line-height: 170%;
+      font-size: 0.6rem;
+      line-height: 150%;
       text-align: justify;
     }
   }

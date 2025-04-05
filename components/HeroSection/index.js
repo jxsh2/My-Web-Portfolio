@@ -1,4 +1,4 @@
-import { Button, Divider, Icon } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import Image from "next/image";
 import styles from "../../public/components/hero-section.module.scss";
 import arrow from "../../public/static/images/other/arrow.png";
@@ -43,7 +43,14 @@ const HeroSection = () => {
             </div>
 
             <div className={styles.arrow}>
-              <Image src={arrow} alt="Profile" />
+              <Image
+                src={arrow}
+                alt="Arrow"
+                className={styles.arrowImg}
+                fill={false}
+                width={32}
+                height={32}
+              />
             </div>
           </div>
         </div>

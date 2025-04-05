@@ -1,30 +1,32 @@
-.generics, 
+@use "../abstracts/__abstracts-dir" as abstract;
+
+.generics,
 .pages {
-    min-height: 100vh;
-    background-size: 100% 100%;
-    position: relative;
-    overflow-x: hidden;
+  min-height: 100vh;
+  background-size: 100% 100%;
+  position: relative;
+  overflow-x: hidden;
 
-    @include tablet {
-        background-attachment: fixed;
-    }
+  @include abstract.tablet {
+    background-attachment: fixed;
+  }
 
-    @include phablet {
-        background-position-y: 87px;
-        background-attachment: fixed;
-    }
+  @include abstract.phablet {
+    background-position-y: 87px;
+    background-attachment: fixed;
+  }
 
-    @include mobile {
-        background-position-y: 87px;
-        background-attachment: fixed;
-    }
+  @include abstract.mobile {
+    background-position-y: 87px;
+    background-attachment: fixed;
+  }
 }
 
 .generics {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &.loader {
-        justify-content: center;
-    }
+  &.loader {
+    justify-content: center;
+  }
 }

@@ -1,15 +1,17 @@
+@use "../abstracts/__abstracts-dir" as abstract;
+
 .globalOffsetPaddingTop {
   padding-top: 15em;
 
-  @include tablet {
+  @include abstract.tablet {
     padding-top: 15em;
   }
 
-  @include phablet {
+  @include abstract.phablet {
     padding-top: 15em;
   }
 
-  @include mobile {
+  @include abstract.mobile {
     padding-top: 10em;
   }
 }

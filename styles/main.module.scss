@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-@import "../public/abstracts/__abstracts-dir";
-@import "../public/base/__base-dir";
-@import "../public/components/__components-dir";
-@import "../public/layouts/__layouts-dir";
+@use "../public/abstracts/__abstracts-dir" as abstract;
+@use "../public/components/__components-dir" as components;
+@use "../public/layouts/__layouts-dir" as layout;

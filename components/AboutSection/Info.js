@@ -1,7 +1,7 @@
 import styles from "../../public/components/info-about.module.scss";
 import Image from "next/image";
-
 import travel from "../../public/static/images/projects/mypic.png";
+
 const InfoSection = () => {
   return (
     <section className={styles.infoCont} id="about">
@@ -20,7 +20,13 @@ const InfoSection = () => {
             machine learning and deep learning to broaden my expertise.
           </div>
           <div className={styles.profileCont}>
-            <Image className={styles.profile} src={travel} alt="profile" />
+            <Image
+              src={travel}
+              alt="profile"
+              fill
+              className={styles.profile}
+              priority
+            />
           </div>
         </div>
       </div>

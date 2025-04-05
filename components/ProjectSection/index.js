@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Grid, Card, Button, Label, Icon, Header } from "semantic-ui-react";
+import { Grid, Button, Icon, Modal } from "semantic-ui-react";
 import projects from "../ProjectSection/ProjectData";
 import style from "../../public/components/project-section.module.scss";
 import Image from "next/image";
 
 const ProjectSection = () => {
-  const initialItemsToShow = 2; // Initial number of items
-  const itemsIncrement = 2; // Number of items to add each time "Show More" is clicked
+  const initialItemsToShow = 2;
+  const itemsIncrement = 2;
   const [itemsToShow, setItemsToShow] = useState(initialItemsToShow);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleShowMore = () => {
     if (itemsToShow + itemsIncrement < projects.length) {
@@ -21,6 +24,16 @@ const ProjectSection = () => {
     setItemsToShow(initialItemsToShow);
   };
 
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
     <section className={style.projectGrid} id="projects">
       <div className="wrapper">
@@ -28,27 +41,23 @@ const ProjectSection = () => {
         <Grid stackable columns={2} className={style.gridCont}>
           {projects.slice(0, itemsToShow).map((project, index) => (
             <Grid.Column key={index} className={style.colGrid}>
-              <Card className={style.projectCard}>
-                <Image
-                  src={project.image}
-                  alt="My Project"
-                  objectFit="contain"
-                  objectPosition="top"
-                />
-                <Card.Content extra className={style.cardExtraContent}>
-                  <div className={style.stackCont}>
-                    {project.techStack.map((tech, i) => (
-                      <Label key={i} className={style.techStack}>
-                        {tech}
-                      </Label>
-                    ))}
-                  </div>
-                </Card.Content>
-                <Card.Content className={style.content}>
-                  <Card.Header as="h6">{project.header}</Card.Header>
-                  <Card.Description as="p">
-                    {project.description}
-                  </Card.Description>
+              <div className={style.projectCard}>
+                <div
+                  className={style.imageWrapper}
+                  onClick={() => openModal(project.image)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <Image
+                    src={project.image}
+                    alt="My Project"
+                    className={style.image}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className={style.content}>
+                  <h6>{project.header}</h6>
+                  <p>{project.description}</p>
                   <div className={style.iconContainer}>
                     {project.link && (
                       <a
@@ -66,11 +75,12 @@ const ProjectSection = () => {
                       </a>
                     )}
                   </div>
-                </Card.Content>
-              </Card>
+                </div>
+              </div>
             </Grid.Column>
           ))}
         </Grid>
+
         <div className={style.showMoreButton}>
           {itemsToShow < projects.length ? (
             <Button onClick={handleShowMore}>SHOW MORE</Button>
@@ -78,6 +88,34 @@ const ProjectSection = () => {
             <Button onClick={handleShowLess}>COLLAPSE</Button>
           )}
         </div>
+
+        {/* Modal for full-size image */}
+        <Modal
+          open={modalOpen}
+          onClose={closeModal}
+          size="large"
+          closeIcon
+          className={style.customModal}
+          basic
+        >
+          <Modal.Content>
+            {selectedImage && (
+              <Image
+                src={selectedImage}
+                alt="Full Project"
+                width={1000}
+                height={600}
+                style={{
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "auto",
+                  border: "none",
+                  color: "black",
+                }}
+              />
+            )}
+          </Modal.Content>
+        </Modal>
       </div>
     </section>
   );

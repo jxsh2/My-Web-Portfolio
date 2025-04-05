@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "../../public/components/skill.module.scss";
 
-//images
+// images
 import c from "../../public/static/images/tech-stack/c.png";
 import canva from "../../public/static/images/tech-stack/canva.png";
 import css from "../../public/static/images/tech-stack/css.png";
@@ -51,14 +51,14 @@ const SkillSection = () => {
       <div className={style.tagContainer}>
         {techStack.map((tech, index) => (
           <div key={index} className={style.tagItem}>
-            <Image
-              src={tech.image}
-              alt={tech.name}
-              width={40} // Adjust size for the tag image
-              height={40}
-              className={style.techImage}
-            />
-            <p className={style.techName}>{tech.name}</p>
+            <div className={style.iconWrapper}>
+              <Image
+                src={tech.image}
+                alt={tech.name}
+                className={style.techImage}
+              />
+            </div>
+            {/* <p className={style.techName}>{tech.name}</p> */}
           </div>
         ))}
       </div>

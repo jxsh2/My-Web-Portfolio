@@ -13,46 +13,31 @@ const HeaderSection = () => {
           idan josh bosi
         </label>
       </Link>
+
       <nav>
         <ul>
           <li>
-            {/* Home link */}
-            <Link href="#home" passHref>
-              <a>home</a>
-            </Link>
+            <Link href="#home">home</Link>
           </li>
           <li>-</li>
           <li>
-            {/* About link */}
-            <Link href="#about" passHref>
-              <a>about</a>
-            </Link>
+            <Link href="#about">about</Link>
           </li>
           <li>-</li>
           <li>
-            {/* Skills link */}
-            <Link href="#tech-stack" passHref>
-              <a>skills</a>
-            </Link>
+            <Link href="#tech-stack">skills</Link>
           </li>
           <li>-</li>
           <li>
-            {/* Projects link */}
-            <Link href="#projects" passHref>
-              <a>projects</a>
-            </Link>
+            <Link href="#projects">projects</Link>
           </li>
           <li>-</li>
           <li>
-            {/* Contact link */}
-            <Link href="#contact" passHref>
-              <a>contact</a>
-            </Link>
+            <Link href="#contact">contact</Link>
           </li>
         </ul>
       </nav>
     </div>
   );
 };
-
 export default HeaderSection;

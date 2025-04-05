@@ -1,13 +1,11 @@
+@use "../abstracts/__abstracts-dir" as abstract;
+
 .heroCont {
   padding: 6rem 3rem;
   align-items: center;
   justify-content: center;
   margin: 0 !important;
 
-  // img {
-  //   max-width: 600px !important;
-  // }
-  //   border: 1px red solid;
   .heroInfo {
     h5 {
       font-weight: 700;
@@ -24,29 +22,30 @@
         -webkit-text-stroke: 1px #2c3930;
       }
     }
+
     p {
       margin-bottom: 2rem;
     }
+
     button {
       font-size: 1rem;
     }
 
     .arrow {
-      max-width: 32px;
       margin-top: 32px;
       justify-self: end;
+
+      .arrowImg {
+        width: 32px;
+        height: auto;
+        object-fit: contain;
+      }
     }
   }
 }
 
-@mixin mobile {
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    @content;
-  }
-}
-
-//mobile
-@include mobile {
+// MOBILE
+@include abstract.mobile {
   .heroCont {
     padding: 5rem 1rem 3rem;
     display: flex;
@@ -56,6 +55,7 @@
 
     .heroInfo {
       text-align: left;
+
       h5 {
         font-size: 2.2rem;
         margin-bottom: 0.5rem;
@@ -66,46 +66,43 @@
         line-height: 120%;
         margin-bottom: 0.5rem;
       }
+
       p {
         font-size: 0.5rem;
         margin-bottom: 0.5rem;
       }
 
       button {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
       }
+
       .arrow {
-        max-width: 16px;
-        margin-top: 32px;
-        justify-self: end;
+        .arrowImg {
+          width: 16px !important;
+        }
       }
     }
   }
 }
 
-@mixin phablet {
-  @media screen and (min-width: 481px) and (max-width: 767px) {
-    @content;
-  }
-}
-
-//phablet
-@include phablet {
+// PHABLET
+@include abstract.phablet {
   .heroCont {
     padding: 5rem 1rem;
     display: flex;
 
     .heroInfo {
       text-align: left;
+
       h5 {
         font-size: 3rem;
       }
 
       h1 {
         font-size: 1.5rem;
-
         line-height: 170%;
       }
+
       p {
         font-size: 0.7rem;
         margin-bottom: 0.5rem;
@@ -116,27 +113,16 @@
       }
 
       .arrow {
-        max-width: 16px;
-        margin-top: 32px;
-        justify-self: end;
+        .arrowImg {
+          width: 20px !important;
+        }
       }
     }
   }
-  .heroCont {
-    img {
-      max-width: 320px !important;
-    }
-  }
 }
 
-@mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    @content;
-  }
-}
-
-//tablet
-@include tablet {
+// TABLET
+@include abstract.tablet {
   .heroCont {
     display: flex;
     padding: 4rem 2rem;
@@ -148,9 +134,9 @@
 
       h1 {
         font-size: 1.8rem;
-
         line-height: 170%;
       }
+
       p {
         font-size: 0.8rem;
         margin-bottom: 0.5rem;
@@ -159,10 +145,11 @@
       button {
         font-size: 0.8rem;
       }
+
       .arrow {
-        max-width: 32px;
-        margin-top: 32px;
-        justify-self: end;
+        .arrowImg {
+          width: 28px !important;
+        }
       }
     }
   }

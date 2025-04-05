@@ -2,9 +2,9 @@
   "name": "nextjs-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "dev": "NODE_ENV=development node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "_moduleAliases": {
     "schemas": "schemas/",
@@ -21,19 +21,21 @@
     "cron": "^1.8.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "framer-motion": "^12.6.3",
     "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
-    "next": "^12.1.4",
+    "next": "^15.2.4",
     "next-compose": "0.0.2",
     "next-compose-plugins": "^2.2.1",
     "next-routes-extended": "^1.7.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.1.2",
     "swr": "^2.0.3"
   },
   "devDependencies": {
-    "sass": "^1.86.3"
+    "sass": "^1.86.3",
+    "sass-migrator": "^2.3.1"
   }
 }

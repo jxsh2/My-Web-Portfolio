@@ -1,3 +1,5 @@
+@use "../public/abstracts/__abstracts-dir" as abstract;
+
 .contactSection {
   padding: 3rem 3rem;
   h2 {
@@ -29,13 +31,7 @@
 }
 
 //mobile
-@mixin mobile {
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    @content;
-  }
-}
-
-@include mobile {
+@include abstract.mobile {
   .contactSection {
     padding: 2rem 1rem;
     h2 {
@@ -58,14 +54,8 @@
   }
 }
 
-@mixin phablet {
-  @media screen and (min-width: 481px) and (max-width: 767px) {
-    @content;
-  }
-}
-
 //phablet
-@include phablet {
+@include abstract.phablet {
   .contactSection {
     padding: 2rem 2rem;
     h2 {
@@ -88,14 +78,8 @@
   }
 }
 
-@mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    @content;
-  }
-}
-
 //tablet
-@include tablet {
+@include abstract.tablet {
   .contactSection {
     padding: 2rem 2rem;
     h2 {

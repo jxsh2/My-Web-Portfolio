@@ -1,3 +1,5 @@
+@use "../abstracts/__abstracts-dir" as abstract;
+
 .cont {
   display: flex;
   justify-content: space-between;
@@ -33,13 +35,7 @@
 }
 
 //mobile
-@mixin mobile {
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    @content;
-  }
-}
-
-@include mobile {
+@include abstract.mobile {
   .cont {
     justify-content: center; // This centers all children within .cont
     padding: 1rem; // Adjust padding for smaller screens
@@ -55,14 +51,8 @@
   }
 }
 
-@mixin phablet {
-  @media screen and (min-width: 481px) and (max-width: 767px) {
-    @content;
-  }
-}
-
 //phablet
-@include phablet {
+@include abstract.phablet {
   .cont {
     justify-content: center;
     padding: 1rem;
@@ -78,14 +68,8 @@
   }
 }
 
-@mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    @content;
-  }
-}
-
 //tablet
-@include tablet {
+@include abstract.tablet {
   .cont {
     display: flex;
     flex-direction: row;
