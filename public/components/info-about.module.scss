@@ -4,8 +4,8 @@
   padding: 3rem 3rem;
 
   .infoTitle {
-    margin-top: 0rem !important;
-    margin-bottom: 46px;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem;
     font-weight: 700 !important;
     font-size: 5rem !important;
     align-items: flex-start;
@@ -17,8 +17,8 @@
     grid-template-columns: 2fr 1fr;
     align-items: flex-start;
     gap: 1rem;
-    column-gap: 3rem; // ✅ creates more space between text and profile
-    row-gap: 2rem; // ✅ adds spacing for smaller screens when stacked
+    column-gap: 3rem;
+    row-gap: 2rem;
   }
 
   .infoContent {

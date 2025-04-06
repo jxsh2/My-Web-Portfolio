@@ -8,23 +8,15 @@ const HeroSection = () => {
   return (
     <section className={styles.heroCont} id="home">
       <div className="wrapper">
-        <motion.div
-          className={styles.heroInfo}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.3,
-              },
-            },
-          }}
-        >
+        <motion.div className={styles.heroInfo}>
           <motion.h5
-            initial={{ y: -30, opacity: 0 }}
+            initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.8,
+            }}
           >
             CREATE. INNOVATE. LEARN. ELEVATE.
           </motion.h5>
@@ -32,15 +24,23 @@ const HeroSection = () => {
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 1.4,
+            }}
           >
             Hi, I'm <span>Idan Josh Bosi</span>, Creative Developer
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 2,
+            }}
           >
             Crafting visually engaging and dynamic web experiences, one pixel at
             a time, with precision and creativity.
@@ -48,14 +48,22 @@ const HeroSection = () => {
 
           <motion.div
             className={styles.buttonGrid}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 2.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 2.6,
+            }}
           >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 2.4 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                delay: 3,
+              }}
             >
               <a
                 href="/static/pdf/[UDPATED]BOSI_Resume_2024.pdf"
@@ -85,19 +93,33 @@ const HeroSection = () => {
               animate={{ y: [0, -10, 0] }}
               transition={{
                 repeat: Infinity,
-                duration: 2,
+                duration: 2.4,
                 ease: "easeInOut",
-                delay: 2.8,
+                delay: 3.4,
               }}
             >
-              <Image
-                src={arrow}
-                alt="Arrow"
-                className={styles.arrowImg}
-                fill={false}
-                width={32}
-                height={32}
-              />
+              <button
+                onClick={() =>
+                  document
+                    .querySelector("#about")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                style={{
+                  background: "transparent !important",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              >
+                <Image
+                  src={arrow}
+                  alt="Scroll down arrow"
+                  className={styles.arrowImg}
+                  fill={false}
+                  width={32}
+                  height={32}
+                />
+              </button>
             </motion.div>
           </motion.div>
         </motion.div>

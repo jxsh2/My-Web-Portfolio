@@ -1,7 +1,9 @@
 @use "../abstracts/__abstracts-dir" as abstract;
 
 .heroCont {
-  padding: 6rem 3rem;
+  min-height: 100dvh;
+  padding: 0 3rem 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 !important;
@@ -9,7 +11,7 @@
   .heroInfo {
     h5 {
       font-weight: 700;
-      font-size: 5.5rem;
+      font-size: 8rem;
       color: #2c3930;
     }
 
@@ -37,6 +39,8 @@
       justify-self: end;
 
       .arrowImg {
+        background-color: #dcd7c9 !important;
+        cursor: pointer;
         width: 32px;
         height: auto;
         object-fit: contain;
@@ -48,7 +52,7 @@
 // MOBILE
 @include abstract.mobile {
   .heroCont {
-    padding: 5rem 1rem 3rem;
+    padding: 0 1rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,8 +93,7 @@
 // PHABLET
 @include abstract.phablet {
   .heroCont {
-    padding: 5rem 1rem;
-    display: flex;
+    padding: 0 1rem 0;
 
     .heroInfo {
       text-align: left;
@@ -126,8 +129,8 @@
 @include abstract.tablet {
   .heroCont {
     display: flex;
-    padding: 4rem 2rem;
-
+    padding: 0 2rem 0;
+    padding-top: 3rem;
     .heroInfo {
       h5 {
         font-size: 4.5rem;

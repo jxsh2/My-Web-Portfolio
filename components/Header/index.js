@@ -9,32 +9,59 @@ const navItems = [
   { label: "contact", href: "#contact" },
 ];
 
+const easing = [0.25, 0.1, 0.25, 1];
+
 const HeaderSection = () => {
   return (
     <motion.div
       className={styles.cont}
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 3 }}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { y: -40, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.8,
+            ease: easing,
+            delay: 1.2,
+            when: "beforeChildren",
+            staggerChildren: 0.15,
+          },
+        },
+      }}
     >
-      <Link href="/" passHref>
-        <motion.label
-          style={{ cursor: "pointer" }}
-          onClick={() => (window.location.href = "/")}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          idan josh bosi
-        </motion.label>
-      </Link>
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: easing, delay: 1.4 }}
+      >
+        <Link href="/" passHref>
+          <motion.label
+            style={{ cursor: "pointer" }}
+            onClick={() => (window.location.href = "/")}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            idan josh bosi
+          </motion.label>
+        </Link>
+      </motion.div>
 
       <nav>
         <ul>
           {navItems.map((item, index) => (
             <motion.li
               key={item.label}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: easing,
+                delay: 1.5 + index * 0.1,
+              }}
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
               <Link href={item.href}>
                 <motion.span transition={{ duration: 0.2 }}>

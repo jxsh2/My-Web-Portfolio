@@ -40,11 +40,17 @@ const InfoSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.5 }}
+            whileHover={{
+              scale: 1.05,
+              filter: "brightness(1.1)",
+              transition: { duration: 0.3 },
+            }}
           >
             <Image
               src={travel}
               alt="profile"
-              fill
+              width={400}
+              height={400}
               className={styles.profile}
               priority
             />
