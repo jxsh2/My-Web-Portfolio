@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7rem;
+  padding: 1rem 3.2rem;
   background-color: transparent;
   width: 100%;
   margin: auto;
@@ -37,16 +37,15 @@
 //mobile
 @include abstract.mobile {
   .cont {
-    justify-content: center; // This centers all children within .cont
-    padding: 1rem; // Adjust padding for smaller screens
-
+    justify-content: center;
+    padding: 1rem;
     label {
       text-align: center;
-      font-size: 0.7rem; // slightly reduce font size
+      font-size: 0.7rem;
       letter-spacing: 8px;
     }
     nav {
-      display: none; // hide li elements on mobile
+      display: none;
     }
   }
 }
@@ -55,7 +54,6 @@
 @include abstract.phablet {
   .cont {
     justify-content: center;
-    padding: 1rem;
 
     label {
       text-align: center;
@@ -75,7 +73,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
 
     label {
       text-align: center;

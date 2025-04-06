@@ -38,7 +38,7 @@ const FooterSection = () => {
         </a>
       </div>
       <div className={styles.credits}>
-        <h6>© 2024 BOSI.PORTFOLIO . All rights reserved.</h6>
+        <h6>© 2025 Idan Josh Bosi. All rights reserved.</h6>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@
   .heroInfo {
     h5 {
       font-weight: 700;
-      font-size: clamp(2rem, 30vw, 5rem);
+      font-size: 5rem;
       color: #2c3930;
     }
 
@@ -35,7 +35,7 @@
     }
 
     .arrow {
-      margin-top: 32px;
+      margin: 8px;
       justify-self: end;
 
       .arrowImg {

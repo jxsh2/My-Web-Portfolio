@@ -12,7 +12,7 @@
   .contactGrid {
     display: flex;
     flex-direction: column;
-
+    margin-bottom: 1rem;
     h3 {
       font-weight: 500;
       font-size: 1rem;
@@ -22,11 +22,12 @@
     .email {
       a {
         font-weight: 700;
-        font-size: 5rem;
+        font-size: 6rem;
         line-height: 100%;
         text-decoration: none;
         white-space: normal;
         word-break: break-word;
+        margin-bottom: 1rem;
       }
     }
   }

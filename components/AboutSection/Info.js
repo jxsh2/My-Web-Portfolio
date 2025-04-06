@@ -3,6 +3,47 @@ import Image from "next/image";
 import travel from "../../public/static/images/projects/mypic.png";
 import { motion } from "framer-motion";
 
+const techStack = [
+  "HTML/CSS",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Python",
+  "C",
+  "SQL",
+  "MongoDB",
+  "TensorFlow",
+  "PyTorch",
+  "Figma",
+  "Canva",
+  "CapCut",
+  "DaVinci Resolve",
+];
+
+// Variants for domino animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
 const InfoSection = () => {
   return (
     <section className={styles.infoCont} id="about">
@@ -32,6 +73,27 @@ const InfoSection = () => {
             technical skills with creativity. Right now, I'm diving deeper into
             full stack development while exploring the exciting fields of
             machine learning and deep learning to broaden my expertise.
+            <h4 className={styles.techHeader}>My Tech Stack</h4>
+            <motion.div
+              className={styles.techStack}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {techStack
+                .slice()
+                .sort()
+                .map((tech, index) => (
+                  <motion.span
+                    key={index}
+                    className={styles.techTag}
+                    variants={tagVariants}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+            </motion.div>
           </motion.div>
 
           <motion.div
