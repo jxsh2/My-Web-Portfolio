@@ -105,7 +105,7 @@ const HeroSection = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
                 style={{
-                  background: "transparent !important",
+                  background: "transparent !importa",
                   border: "none",
                   cursor: "pointer",
                   padding: 0,
