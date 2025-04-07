@@ -8,7 +8,7 @@ import vct from "../../public/static/images/projects/VCT.png";
 const projects = [
   {
     header: "VCT Dispatch",
-    description: "An ESport article website all about VCT.",
+    description: "An e-Sport article website all about VCT.",
     image: vct,
     link: "https://vct-dispatch.vercel.app",
   },
