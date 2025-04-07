@@ -26,17 +26,23 @@ html {
   scroll-padding-top: 8vh;
   scroll-behavior: smooth;
 }
+
 body {
   cursor: url(".././public/static/images/other/click.png"), auto;
 }
 html,
 body {
   font-family: $font-poppins !important;
-  background-color: #dcd7c9;
   color: $white;
   font-size: 1.25rem;
   height: 100%;
   overflow-x: hidden;
+
+  background-image: url("../public/static/images/other/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #__next {

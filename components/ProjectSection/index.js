@@ -49,8 +49,7 @@ const ProjectSection = () => {
                       src={project.image}
                       alt="My Project"
                       className={style.image}
-                      layout="fill"
-                      objectFit="cover"
+                      style={{ objectFit: "cover" }}
                     />
                     <div className={style.overlay}>
                       <span className={style.overlayText}>Visit Website</span>
