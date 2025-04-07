@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,900;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Noto+Sans:ital,wght@0,900;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-// Fonts
-$font-noto: "Noto Sans", sans-serif;
+
 $font-poppins: "Poppins", sans-serif;
 $font-fira: "Fira Code";
 // Colors
@@ -23,8 +21,10 @@ $white: #2c3930;
 }
 
 html {
-  scroll-padding-top: 8vh;
-  scroll-behavior: smooth;
+  scroll-padding-top: 8vh !important;
+  scroll-behavior: smooth !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 body {
@@ -61,9 +61,6 @@ a {
 }
 
 // Utility Classes
-.font-noto {
-  font-family: $font-noto;
-}
 
 .font-poppins {
   font-family: $font-poppins;
@@ -83,36 +80,36 @@ h6 {
   margin: 0;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
+// h1 {
+//   font-size: 2.5rem;
+// }
 
-h2 {
-  font-size: 1.75rem;
-}
+// h2 {
+//   font-size: 1.75rem;
+// }
 
-h3 {
-  font-size: 1.5rem;
-}
+// h3 {
+//   font-size: 1.5rem;
+// }
 
-h4 {
-  font-size: 1.3rem;
-}
+// h4 {
+//   font-size: 1.3rem;
+// }
 
-h5 {
-  font-size: 1.1rem;
-}
+// h5 {
+//   font-size: 1.1rem;
+// }
 
-h6 {
-  font-size: 0.9rem;
-}
+// h6 {
+//   font-size: 0.9rem;
+// }
 
-p {
-  font-size: 0.8rem;
-  margin-bottom: 2rem;
-  line-height: 170%;
-  font-weight: 200;
-}
+// p {
+//   font-size: 0.8rem;
+//   margin-bottom: 2rem;
+//   line-height: 170%;
+//   font-weight: 200;
+// }
 
 // -------------------------------
 // Global Background & Utility Classes
