@@ -86,7 +86,7 @@
 
         h6,
         p {
-          font-family: "Poppins", sans-serif !important;
+          font-family: "Fira Code", monospace !important;
           line-height: 170% !important;
         }
 
@@ -97,25 +97,11 @@
         }
 
         p {
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           font-weight: 300;
           color: white !important;
           margin: 0 !important;
         }
-
-        .iconContainer {
-          display: flex;
-          justify-content: flex-end;
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-        }
-
-        .icon {
-          font-size: 0.7rem !important;
-          color: white;
-        }
-
         &:hover {
           transform: translateY(-8px);
         }

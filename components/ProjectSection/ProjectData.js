@@ -1,15 +1,17 @@
-import automata from "../../public/static/images/projects/automata.png";
-import blackhole from "../../public/static/images/projects/blackhole.png";
 import clevercash from "../../public/static/images/projects/clevercash.png";
 import diary from "../../public/static/images/projects/diary.png";
-import game from "../../public/static/images/projects/game.png";
 import idfrom from "../../public/static/images/projects/idfrom.png";
 import infoman from "../../public/static/images/projects/infoman.png";
-import lexer from "../../public/static/images/projects/lexer.png";
 import map from "../../public/static/images/projects/map.png";
 import ppl from "../../public/static/images/projects/ppl.png";
-
+import vct from "../../public/static/images/projects/VCT.png";
 const projects = [
+  {
+    header: "VCT Dispatch",
+    description: "An ESport article website all about VCT.",
+    image: vct,
+    link: "https://vct-dispatch.vercel.app",
+  },
   {
     header: "PUPAFID",
     description:
@@ -18,24 +20,13 @@ const projects = [
     link: "https://jxsh2.github.io/PUPAFID-System",
   },
   {
-    header: "Sentiment Analyzer",
-    description:
-      "Web application that analyzes text sentiments to classify them as positive, negative, or neutral.",
-    image: automata,
-  },
-  {
     header: "CleverCash",
     description:
       "Financial management platform designed to track budgets and transactions.",
     image: clevercash,
     link: "https://clever-cash.vercel.app/",
   },
-  {
-    header: "Start-Up Lexer",
-    description:
-      "Application that supports a custom programming language, focusing on lexical analysis.",
-    image: lexer,
-  },
+
   {
     header: "Mini-Diary Website",
     description: "Simple diary website for personal use.",
@@ -59,16 +50,6 @@ const projects = [
     description:
       "Desktop application that digitizes traditional driver's application forms.",
     image: infoman,
-  },
-  {
-    header: "Black Hole Simulator",
-    description: "Desktop application that simulates black hole physics.",
-    image: blackhole,
-  },
-  {
-    header: "Tactic Tiles",
-    description: "Mini-game featuring an AI opponent.",
-    image: game,
   },
 ];
 
