@@ -6,28 +6,28 @@ const FooterSection = () => {
     <section className={styles.footer}>
       <div className={styles.socialIcons}>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/eyy_dannn/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Icon name="instagram" size="large" />
         </a>
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/idanjosh.bosi"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Icon name="facebook" size="large" />
         </a>
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/idan-josh-bosi/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Icon name="linkedin" size="large" />
         </a>
         <a
-          href="https://www.github.com"
+          href="https://github.com/jxsh2"
           target="_blank"
           rel="noopener noreferrer"
         >
