@@ -97,7 +97,7 @@ const HeroSection = () => {
               }}
             >
               <a
-                href="/static/pdf/[UDPATED]BOSI_Resume_2024.pdf"
+                href="/static/pdf/[RESUME]BOSI.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
