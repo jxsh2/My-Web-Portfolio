@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 $font-poppins: "Poppins", sans-serif;
-$dark-blue: #2c3930;
-$medium-blue: #2c3930;
+$dark-blue: #d8d2c2;
+$medium-blue: #d8d2c2;
 
-$orange: #a27b5c;
-$light-blue: #2c3930;
-$white: #2c3930;
+$orange: #b17457;
+$light-blue: #d8d2c2;
+$white: #d8d2c2;
 
 // Reset & Global Base Styles
 * {
@@ -36,7 +36,7 @@ body {
   height: 100%;
   overflow-x: hidden;
 
-  background-image: url("../public/static/images/other/bg.svg");
+  background-image: url("../public/static/images/other/blackbg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,11 +50,11 @@ body {
 }
 
 a {
-  color: $white;
+  color: $white !important;
   text-decoration: none;
 
   &:hover {
-    color: $orange;
+    color: $orange !important;
   }
 }
 
@@ -155,7 +155,7 @@ h6 {
 
 button {
   background-color: #3f4f44 !important;
-  color: white !important;
+  color: #d8d2c2 !important;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   border: none;
@@ -166,7 +166,7 @@ button {
   overflow: hidden;
 
   &:hover {
-    background-color: #a27b5c !important; /* Darker hover effect */
+    background-color: #b17457 !important; /* Darker hover effect */
     transform: scale(1.05); /* Slightly increase button size */
   }
 }

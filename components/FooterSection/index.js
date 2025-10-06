@@ -6,7 +6,7 @@ const FooterSection = () => {
     <section className={styles.footer}>
       <div className={styles.socialIcons}>
         <a
-          href="https://www.instagram.com/eyy_dannn/"
+          href="https://www.instagram.com/idanbsi_/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -38,7 +38,7 @@ const FooterSection = () => {
         </a>
       </div>
       <div className={styles.credits}>
-        <h6>© 2025 Idan Josh Bosi. All rights reserved.</h6>
+        <h6>© 2025 Bosi. All rights reserved.</h6>
       </div>
     </section>
   );

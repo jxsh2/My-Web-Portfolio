@@ -1,6 +1,6 @@
 import styles from "../../public/components/info-about.module.scss";
 import Image from "next/image";
-import travel from "../../public/static/images/projects/mypic.png";
+import travel from "../../public/static/images/projects/PROF.jpg";
 import { motion } from "framer-motion";
 
 const techStack = [
@@ -66,14 +66,16 @@ const InfoSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            I'm currently a 4th year Bachelor of Science in Computer Science
-            student at PUP Sta. Mesa, where I'm building a strong foundation in
-            software development and problem-solving. I enjoy creating beautiful
-            websites and also I have experience in video editing, combining
-            technical skills with creativity. Right now, I'm diving deeper into
-            full stack development while exploring the exciting fields of
-            machine learning and deep learning to broaden my expertise.
-            <h4 className={styles.techHeader}>My Tech Stack</h4>
+            I am a recent graduate with a Bachelor of Science in Computer
+            Science from Polytechnic University of the Philippines, Sta. Mesa.
+            During my studies, I developed a strong foundation in software
+            development and problem-solving. I have experience in web
+            development, building modern and user-friendly websites, and I am
+            passionate about combining technical skills with creativity. I also
+            gained knowledge and hands-on experience in machine learning and
+            deep learning through academic projects, broadening my expertise in
+            emerging technologies. I am eager to apply my skills and continue
+            learning in full stack development and artificial intelligence.
             <motion.div
               className={styles.techStack}
               variants={containerVariants}
