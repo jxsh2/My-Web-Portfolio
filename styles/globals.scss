@@ -35,12 +35,12 @@ body {
   font-size: 1.25rem;
   height: 100%;
   overflow-x: hidden;
-
-  background-image: url("../public/static/images/other/blackbg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: radial-gradient(circle at center, #1a1a1a, #0f0e0e);
+  // background-image: url("../public/static/images/other/blackbg.svg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  // background-attachment: fixed;
 }
 
 #__next {
@@ -164,6 +164,7 @@ button {
   font-weight: 500 !important;
   transition: background-color 0.3s ease, transform 0.3s ease;
   overflow: hidden;
+  text-align: center !important;
 
   &:hover {
     background-color: #b17457 !important; /* Darker hover effect */

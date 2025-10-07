@@ -25,7 +25,7 @@ const HeaderSection = () => {
           transition: {
             duration: 0.8,
             ease: easing,
-            delay: 1.2,
+            delay: 4.2,
             when: "beforeChildren",
             staggerChildren: 0.15,
           },

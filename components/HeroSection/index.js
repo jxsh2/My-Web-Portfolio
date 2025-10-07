@@ -32,7 +32,7 @@ const HeroSection = () => {
     <section className={styles.heroCont} id="home">
       <div className="wrapper">
         <motion.div className={styles.heroInfo}>
-          <motion.h5
+          {/* <motion.h5
             variants={wordContainer}
             initial="hidden"
             whileInView="visible"
@@ -50,21 +50,9 @@ const HeroSection = () => {
                   {word}
                 </motion.span>
               ))}
-          </motion.h5>
+          </motion.h5> */}
 
           <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 1,
-              ease: [0.25, 0.1, 0.25, 1],
-              delay: 1.4,
-            }}
-          >
-            Hi, I'm <span>Idan Josh Bosi</span>, Creative Developer
-          </motion.h1>
-
-          <motion.p
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -73,8 +61,21 @@ const HeroSection = () => {
               delay: 2,
             }}
           >
-            Crafting visually engaging and dynamic web experiences, one pixel at
-            a time, with precision and creativity.
+            Hello, <span>I am Idan!</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 2.5,
+            }}
+          >
+            I pour my focus into every detail, meticulously crafting visually
+            engaging and dynamic web experiences it's a passion I bring to life,
+            one pixel at a time.
           </motion.p>
 
           <motion.div
@@ -84,7 +85,7 @@ const HeroSection = () => {
             transition={{
               duration: 1,
               ease: [0.25, 0.1, 0.25, 1],
-              delay: 2.6,
+              delay: 3,
             }}
           >
             <motion.div
@@ -93,7 +94,7 @@ const HeroSection = () => {
               transition={{
                 duration: 0.8,
                 ease: "easeOut",
-                delay: 3,
+                delay: 3.5,
               }}
             >
               <a
@@ -124,9 +125,9 @@ const HeroSection = () => {
               animate={{ y: [0, -10, 0] }}
               transition={{
                 repeat: Infinity,
-                duration: 2.4,
+                duration: 1,
                 ease: "easeInOut",
-                delay: 3.4,
+                delay: 5,
               }}
             >
               <button
