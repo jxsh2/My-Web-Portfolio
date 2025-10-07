@@ -73,9 +73,8 @@ const HeroSection = () => {
               delay: 2.5,
             }}
           >
-            I pour my focus into every detail, meticulously crafting visually
-            engaging and dynamic web experiences it's a passion I bring to life,
-            one pixel at a time.
+            I love bringing ideas to life online crafting clean, dynamic, and
+            eye-catching web experiences, one pixel at a time.
           </motion.p>
 
           <motion.div
