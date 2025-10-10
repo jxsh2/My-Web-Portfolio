@@ -77,9 +77,9 @@ const ProjectSection = () => {
 
         <div className={style.showMoreButton}>
           {itemsToShow < projects.length ? (
-            <Button onClick={handleShowMore}>more</Button>
+            <Button onClick={handleShowMore}>+</Button>
           ) : (
-            <Button onClick={handleShowLess}>collapse</Button>
+            <Button onClick={handleShowLess}>-</Button>
           )}
         </div>
       </div>

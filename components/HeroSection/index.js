@@ -97,7 +97,7 @@ const HeroSection = () => {
               }}
             >
               <a
-                href="/static/pdf/WEBDEV_RESUME.pdf"
+                href="/static/pdf/[RESUME]BOSI, IDAN JOSH.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
