@@ -72,8 +72,7 @@ const InfoSection = () => {
               viewport={{ once: true, amount: 0.5 }}
             >
               I am a recent graduate with a Bachelor of Science in Computer
-              Science from Polytechnic University of the Philippines, Sta.
-              Mesa.
+              Science from Polytechnic University of the Philippines, Sta. Mesa.
             </motion.p>
 
             <motion.p
@@ -85,25 +84,14 @@ const InfoSection = () => {
             >
               During my studies, I developed a strong foundation in software
               development and problem-solving. I have experience in web
-              development, building modern and user-friendly websites, and I
-              am passionate about combining technical skills with
-              creativity. I also gained knowledge and hands-on experience in
-              machine learning and deep learning through academic projects,
-              broadening my expertise in emerging technologies. I am eager to
-              apply my skills and continue learning in full stack
-              development and artificial intelligence.
+              development, building modern and user-friendly websites, and I am
+              passionate about combining technical skills with creativity. I
+              also gained knowledge and hands-on experience in machine learning
+              and deep learning through academic projects, broadening my
+              expertise in emerging technologies. I am eager to apply my skills
+              and continue learning in full stack development and artificial
+              intelligence.
             </motion.p>
-
-            <motion.div
-              className={styles.credentialChip}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, amount: 0.5 }}
-            >
-              B.S. Computer Science — Polytechnic University of the
-              Philippines
-            </motion.div>
           </div>
 
           <motion.div

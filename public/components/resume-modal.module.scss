@@ -138,8 +138,13 @@
 }
 
 @include abstract.mobile {
+  .overlay {
+    padding: 1rem;
+  }
+
   .modal {
-    padding: 2rem 1.5rem;
+    padding: 3.75rem 1.25rem 1.75rem;
+    max-width: 100%;
 
     h3 {
       font-size: 1.15rem;
@@ -148,5 +153,10 @@
     p {
       font-size: 0.75rem;
     }
+  }
+
+  .closeButton {
+    top: 0.6rem;
+    right: 0.6rem;
   }
 }

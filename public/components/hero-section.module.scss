@@ -4,313 +4,261 @@
   position: relative;
   overflow: hidden;
   min-height: 100dvh;
-  padding: 6rem 3rem 3rem;
+  display: flex;
+  align-items: stretch;
+  font-style: "Poppins", sans-serif;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6.5rem 2.5rem 2.5rem;
+  gap: 1.5rem;
+}
+
+// ---------- Top row ----------
+
+.topRow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tag {
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+// ---------- Massive name stack ----------
+
+.nameStack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
   justify-content: center;
+  column-gap: 0.32em;
+  width: 100%;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.lineInner {
+  display: block;
+  font-size: clamp(3rem, 9.5vw, 9.5rem);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.lineAccent {
+  color: var(--color-accent);
+}
+
+// ---------- Bottom row ----------
+
+.bottomRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.blurb {
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 165%;
+  color: var(--color-text-muted);
+  max-width: 26rem;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.rawButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 62px;
   margin: 0 !important;
-  font-style: "Poppins", sans-serif;
+  padding: 0 2.5rem !important;
+  border: 3px solid var(--color-text) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  color: var(--color-text) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, color 0.15s ease;
 
-  .heroLayout {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 3rem;
-    width: 100%;
+  &:hover {
+    background: var(--color-text) !important;
+    color: var(--color-bg) !important;
+    transform: none !important;
   }
+}
 
-  .heroInfo {
-    text-align: left;
-  }
+.rawButtonFilled {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-bg) !important;
 
-  .revealMask {
-    display: block;
-    overflow: hidden;
-  }
-
-  .revealInner {
-    display: block;
-  }
-
-  .introLine {
-    font-weight: 400 !important;
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
-    margin-bottom: 0.75rem;
-    text-align: left;
-  }
-
-  h1 {
-    font-size: 4.6rem;
-    font-weight: 700;
-    line-height: 108%;
-    text-align: left;
-    overflow-wrap: break-word;
-    color: var(--color-text);
-
-    .nameAccent {
-      display: inline-block;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1.5px var(--color-accent);
-      text-shadow: 0 0 24px var(--color-accent-soft);
-    }
-  }
-
-  .typeCursor {
-    display: inline-block;
-    width: 3px;
-    height: 0.85em;
-    margin-left: 4px;
-    background: var(--color-accent);
-    vertical-align: text-bottom;
-    animation: heroCursorBlink 1s step-end infinite;
-  }
-
-  p {
-    font-weight: 300 !important;
-    font-size: 1.05rem;
-    line-height: 170%;
-    color: var(--color-text-muted);
-    margin: 1.5rem 0 2.5rem;
-    max-width: 30rem;
-    text-align: left;
-  }
-
-  button {
-    font-size: 0.85rem !important;
-    margin: 0 0.35rem 0 0;
-  }
-
-  .buttonGrid {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .buttonRow {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .magneticBtn {
-    display: inline-block;
-  }
-
-  // ---------- Glass photo card ----------
-
-  .photoWrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .photoCard {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 340px;
-    aspect-ratio: 4 / 5;
-    padding: 12px;
-    border-radius: 32px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    @include abstract.glass(26px, var(--glass-bg-strong), var(--glass-border-strong));
-    box-shadow: inset 0 1px 0 var(--glass-highlight);
-  }
-
-  .photoImgWrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 22px;
-    overflow: hidden;
-  }
-
-  .photoImg {
-    object-fit: cover;
+  &:hover {
+    background: var(--color-text) !important;
+    border-color: var(--color-text) !important;
+    color: var(--color-bg) !important;
   }
 }
 
 // MOBILE
 @include abstract.mobile {
-  .heroCont {
-    padding: 5.5rem 1.5rem 2rem;
+  .heroInner {
+    padding: 5.5rem 1.25rem 1.75rem;
+    gap: 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+  }
+
+  .nameStack {
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0;
+  }
+
+  .lineInner {
+    font-size: clamp(2.75rem, 16vw, 4.5rem);
+    line-height: 0.9;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .blurb {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+
+  .buttonRow {
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
 
-    .heroLayout {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-
-    .photoWrap {
-      order: -1;
-    }
-
-    .photoCard {
-      max-width: 190px;
-      padding: 8px;
-      border-radius: 26px;
-    }
-
-    .photoImgWrap {
-      border-radius: 18px;
-    }
-
-    .heroInfo {
-      text-align: center;
-    }
-
-    .introLine {
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      line-height: 118%;
-      overflow-wrap: break-word;
-      text-align: center;
-    }
-
-    p {
-      font-size: 0.85rem;
-      line-height: 165%;
-      margin: 1rem 0 1.75rem;
-      text-align: center;
-      max-width: 100%;
-    }
-
-    .buttonGrid {
-      gap: 0.6rem;
-      width: 100%;
-      align-items: center;
-    }
-
-    .buttonRow {
-      flex-direction: column;
-      gap: 0.6rem;
-      width: 100%;
-      justify-content: center;
-    }
-
-    .magneticBtn {
-      display: block;
-      width: 100%;
-    }
-
-    button {
-      font-size: 0.75rem !important;
-      width: 100%;
-      margin: 0;
-    }
+  .rawButton {
+    width: 100%;
+    height: 52px;
+    padding: 0 1.25rem !important;
+    font-size: 0.8rem !important;
+    border-width: 2px !important;
   }
 }
 
 // PHABLET
 @include abstract.phablet {
-  .heroCont {
-    padding: 6rem 2rem 2.5rem;
+  .heroInner {
+    padding: 6rem 1.75rem 2rem;
+  }
 
-    .heroLayout {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
+  .nameStack {
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0;
+  }
 
-    .photoWrap {
-      order: -1;
-    }
+  .lineInner {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
 
-    .photoCard {
-      max-width: 230px;
-    }
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
 
-    .heroInfo {
-      text-align: center;
-    }
+  .blurb {
+    max-width: 100%;
+  }
 
-    .introLine {
-      font-size: 0.95rem;
-      text-align: center;
-    }
+  .buttonRow {
+    width: 100%;
+    gap: 0.6rem;
+  }
 
-    h1 {
-      font-size: 3.2rem;
-      line-height: 118%;
-      overflow-wrap: break-word;
-      text-align: center;
-    }
-
-    p {
-      font-size: 0.9rem;
-      margin: 1rem 0 1.75rem;
-      text-align: center;
-      max-width: 100%;
-    }
-
-    .buttonGrid {
-      align-items: center;
-    }
-
-    .buttonRow {
-      justify-content: center;
-    }
-
-    button {
-      font-size: 0.8rem !important;
-    }
+  .rawButton {
+    flex: 1 1 0;
+    height: 54px;
+    padding: 0 1rem !important;
+    font-size: 0.75rem !important;
+    border-width: 2px !important;
   }
 }
 
 // TABLET
 @include abstract.tablet {
-  .heroCont {
-    display: flex;
-    padding: 6rem 2rem 2.5rem;
+  .heroInner {
+    padding: 6.5rem 2rem 2rem;
+  }
 
-    .heroLayout {
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 2rem;
-    }
-
-    .photoCard {
-      max-width: 260px;
-    }
-
-    .introLine {
-      font-size: 1rem;
-    }
-
-    h1 {
-      font-size: 3.4rem;
-      line-height: 116%;
-      overflow-wrap: break-word;
-    }
-
-    p {
-      font-size: 0.95rem;
-      margin: 1.25rem 0 2rem;
-    }
-
-    button {
-      font-size: 0.85rem !important;
-    }
+  .lineInner {
+    font-size: clamp(3rem, 9.5vw, 6rem);
   }
 }
 
-@keyframes heroCursorBlink {
-  0%,
-  50% {
-    opacity: 1;
+// MEDIUM DESKTOP / LAPTOP
+@include abstract.medium-screen {
+  .lineInner {
+    font-size: clamp(6rem, 9.5vw, 11rem);
   }
-  50.01%,
-  100% {
-    opacity: 0;
+}
+
+// LARGE DESKTOP
+@include abstract.large-screen {
+  .heroInner {
+    padding: 7rem 4rem 3rem;
+  }
+
+  .lineInner {
+    font-size: clamp(8rem, 10vw, 15rem);
+  }
+
+  .blurb {
+    font-size: 1.05rem;
+    max-width: 30rem;
   }
 }

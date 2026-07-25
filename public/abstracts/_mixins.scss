@@ -46,3 +46,13 @@
     box-shadow: inset 0 1px 0 var(--glass-highlight),
         0 8px 30px var(--glass-shadow);
 }
+
+// Brutalist / raw surface — sharp corners, solid border, no blur or soft shadow.
+@mixin raw-panel($bg: transparent, $border: var(--color-text), $width: 2px) {
+    background: $bg;
+    border: $width solid $border;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
