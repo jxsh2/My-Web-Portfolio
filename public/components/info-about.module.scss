@@ -1,14 +1,14 @@
 @use "../abstracts/__abstracts-dir" as abstract;
 
 .infoCont {
-  padding: 6rem 3rem;
+  padding: 7rem 3rem;
   font-style: "Poppins", sans-serif;
 
   .infoTitle {
-    margin-bottom: 3rem;
+    text-align: left;
+    margin-bottom: 3.5rem;
     font-weight: 700 !important;
     font-size: 2.75rem !important;
-    align-items: flex-start;
     color: var(--color-text);
   }
 
@@ -23,62 +23,54 @@
 
   .infoGrid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: flex-start;
-    gap: 1rem;
-    column-gap: 3rem;
-    row-gap: 2rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+    gap: 3.5rem;
   }
 
-  .infoContent {
-    padding: 0;
-    justify-self: start;
+  .infoMain {
+    text-align: left;
+  }
+
+  .lead {
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 145%;
+    color: var(--color-text);
+  }
+
+  .support {
+    margin-top: 1.5rem;
     font-weight: 300;
     font-size: 1rem;
-    line-height: 175%;
+    line-height: 180%;
     color: var(--color-text-muted);
-    text-align: justify;
   }
 
-  .profileCont {
-    position: relative;
-    width: 100%;
-    max-width: 420px;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
+  .credentialChip {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.75rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    font-family: "Fira Code", monospace;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    @include abstract.glass(16px, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.14));
+  }
 
-    .profileInner {
-      width: 100%;
-      height: 100%;
-    }
-
-    img,
-    .profile {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(0.25);
-    }
-
-    @include abstract.mobile {
-      max-width: 220px;
-    }
-
-    @include abstract.phablet {
-      max-width: 260px;
-    }
-
-    @include abstract.tablet {
-      max-width: 300px;
-    }
+  .techPanel {
+    position: sticky;
+    top: 6.5rem;
+    padding: 2rem;
+    border-radius: 28px;
+    text-align: left;
+    @include abstract.glass(28px, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.12));
   }
 }
 
 .techHeader {
-  margin-top: 1.75rem !important;
+  display: block;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -90,7 +82,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0.75rem 0 0.5rem;
+  margin-top: 1rem;
 }
 
 .techTag {
@@ -100,7 +92,7 @@
   font-family: "Fira Code", monospace;
   font-weight: 500;
   color: var(--color-text-muted);
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--color-border);
   transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease,
     border-color 0.25s ease;
@@ -116,28 +108,48 @@
 // Mobile
 @include abstract.mobile {
   .infoCont {
-    padding: 4rem 1.5rem;
+    padding: 4.5rem 1.5rem;
 
     .infoTitle {
       font-size: 1.6rem !important;
       margin-bottom: 1.5rem;
       text-align: center;
+    }
 
-      .underline {
-        margin: 1rem auto 0;
-      }
+    .underline {
+      margin: 1rem auto 0;
     }
 
     .infoGrid {
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .infoContent {
+    .infoMain {
       text-align: center;
-      font-size: 0.85rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      line-height: 150%;
+    }
+
+    .support {
+      font-size: 0.82rem;
       line-height: 170%;
+      margin-top: 1rem;
+    }
+
+    .credentialChip {
+      font-size: 0.65rem;
+      padding: 0.45rem 0.85rem;
+      margin-top: 1.25rem;
+    }
+
+    .techPanel {
+      position: static;
+      padding: 1.25rem;
+      border-radius: 20px;
     }
   }
 
@@ -161,26 +173,37 @@
 // Phablet
 @include abstract.phablet {
   .infoCont {
-    padding: 4rem 2rem;
+    padding: 4.5rem 2rem;
 
     .infoTitle {
       font-size: 2rem !important;
       text-align: center;
+    }
 
-      .underline {
-        margin: 1rem auto 0;
-      }
+    .underline {
+      margin: 1rem auto 0;
     }
 
     .infoGrid {
-      display: flex;
-      flex-direction: column-reverse;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
     }
 
-    .infoContent {
+    .infoMain {
       text-align: center;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+    }
+
+    .support {
       font-size: 0.85rem;
-      line-height: 170%;
+    }
+
+    .techPanel {
+      position: static;
+      padding: 1.5rem;
     }
   }
 
@@ -204,15 +227,29 @@
 // Tablet
 @include abstract.tablet {
   .infoCont {
-    padding: 4.5rem 2rem;
+    padding: 5rem 2rem;
 
     .infoTitle {
       font-size: 2.25rem !important;
     }
 
-    .infoContent {
-      font-size: 0.85rem;
-      line-height: 165%;
+    .infoGrid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .techPanel {
+      position: static;
+      padding: 1.75rem;
+    }
+
+    .lead {
+      font-size: 1.4rem;
+    }
+
+    .support {
+      font-size: 0.9rem;
+      line-height: 170%;
     }
   }
 

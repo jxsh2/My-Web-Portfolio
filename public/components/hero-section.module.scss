@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   min-height: 100dvh;
-  padding: 0 3rem;
+  padding: 6rem 3rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,12 +30,18 @@
     }
   }
 
-  .heroInfo {
+  .heroLayout {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .heroInfo {
+    text-align: left;
   }
 
   .revealMask {
@@ -53,14 +59,14 @@
     letter-spacing: 0.06em;
     color: var(--color-text-muted);
     margin-bottom: 0.75rem;
-    text-align: center;
+    text-align: left;
   }
 
   h1 {
-    font-size: 5.5rem;
+    font-size: 4.6rem;
     font-weight: 700;
     line-height: 108%;
-    text-align: center;
+    text-align: left;
     overflow-wrap: break-word;
     color: var(--color-text);
 
@@ -77,34 +83,73 @@
     line-height: 170%;
     color: var(--color-text-muted);
     margin: 1.5rem 0 2.5rem;
-    max-width: 32rem;
-    text-align: center;
+    max-width: 30rem;
+    text-align: left;
   }
 
   button {
     font-size: 0.85rem;
-    margin: 0 0.35rem;
+    margin: 0 0.35rem 0 0;
   }
 
   .buttonGrid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .buttonRow {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .magneticBtn {
     display: inline-block;
   }
 
+  // ---------- Glass photo card ----------
+
+  .photoWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photoCard {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 4 / 5;
+    padding: 12px;
+    border-radius: 32px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    @include abstract.glass(26px, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.16));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .photoImgWrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .photoImg {
+    object-fit: cover;
+  }
+
+  // ---------- Scroll cue ----------
+
   .arrow {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
+    width: 100%;
+    text-align: center;
 
     button {
       background: transparent !important;
@@ -131,18 +176,43 @@
 // MOBILE
 @include abstract.mobile {
   .heroCont {
-    padding: 0 1.5rem;
+    padding: 5.5rem 1.5rem 2rem;
     width: 100%;
+
+    .heroLayout {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .photoWrap {
+      order: -1;
+    }
+
+    .photoCard {
+      max-width: 190px;
+      padding: 8px;
+      border-radius: 26px;
+    }
+
+    .photoImgWrap {
+      border-radius: 18px;
+    }
+
+    .heroInfo {
+      text-align: center;
+    }
 
     .introLine {
       font-size: 0.85rem;
       margin-bottom: 0.5rem;
+      text-align: center;
     }
 
     h1 {
       font-size: 2.5rem;
       line-height: 118%;
       overflow-wrap: break-word;
+      text-align: center;
     }
 
     p {
@@ -150,17 +220,20 @@
       line-height: 165%;
       margin: 1rem 0 1.75rem;
       text-align: center;
+      max-width: 100%;
     }
 
     .buttonGrid {
       gap: 0.6rem;
       width: 100%;
+      align-items: center;
     }
 
     .buttonRow {
       flex-direction: column;
       gap: 0.6rem;
       width: 100%;
+      justify-content: center;
     }
 
     .magneticBtn {
@@ -175,7 +248,7 @@
     }
 
     .arrow {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
 
       .arrowImg {
         width: 20px !important;
@@ -187,22 +260,50 @@
 // PHABLET
 @include abstract.phablet {
   .heroCont {
-    padding: 0 2rem;
-    padding-top: 3rem;
+    padding: 6rem 2rem 2.5rem;
+
+    .heroLayout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .photoWrap {
+      order: -1;
+    }
+
+    .photoCard {
+      max-width: 230px;
+    }
+
+    .heroInfo {
+      text-align: center;
+    }
 
     .introLine {
       font-size: 0.95rem;
+      text-align: center;
     }
 
     h1 {
-      font-size: 3.4rem;
+      font-size: 3.2rem;
       line-height: 118%;
       overflow-wrap: break-word;
+      text-align: center;
     }
 
     p {
       font-size: 0.9rem;
       margin: 1rem 0 1.75rem;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .buttonGrid {
+      align-items: center;
+    }
+
+    .buttonRow {
+      justify-content: center;
     }
 
     button {
@@ -221,15 +322,23 @@
 @include abstract.tablet {
   .heroCont {
     display: flex;
-    padding: 0 2rem;
-    padding-top: 3rem;
+    padding: 6rem 2rem 2.5rem;
+
+    .heroLayout {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+    }
+
+    .photoCard {
+      max-width: 260px;
+    }
 
     .introLine {
       font-size: 1rem;
     }
 
     h1 {
-      font-size: 4.2rem;
+      font-size: 3.4rem;
       line-height: 116%;
       overflow-wrap: break-word;
     }
