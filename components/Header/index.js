@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../../public/components/header.module.scss";
 import Link from "next/link";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useSpring,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
   { label: "home", href: "#home", id: "home" },
@@ -56,12 +51,6 @@ const useActiveSection = (ids) => {
 
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 24,
-    mass: 0.3,
-  });
   const activeSection = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
@@ -85,14 +74,6 @@ const HeaderSection = () => {
 
   return (
     <>
-      <motion.div
-        className={styles.scrollProgress}
-        style={{ scaleX: progress }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      />
-
       <motion.div
         className={styles.headerBar}
         initial={{ y: -40, opacity: 0 }}
