@@ -80,7 +80,7 @@
   }
 
   button {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
     margin: 0 0.35rem 0 0;
   }
 
@@ -134,34 +134,6 @@
 
   .photoImg {
     object-fit: cover;
-  }
-
-  // ---------- Scroll cue ----------
-
-  .arrow {
-    margin-top: 3rem;
-    width: 100%;
-    text-align: center;
-
-    button {
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-
-      &:hover {
-        background: transparent !important;
-        transform: none;
-      }
-
-      .arrowImg {
-        cursor: pointer;
-        width: 28px;
-        height: auto;
-        object-fit: contain;
-        opacity: 0.6;
-        filter: grayscale(1) brightness(1.6);
-      }
-    }
   }
 }
 
@@ -234,17 +206,9 @@
     }
 
     button {
-      font-size: 0.75rem;
+      font-size: 0.75rem !important;
       width: 100%;
       margin: 0;
-    }
-
-    .arrow {
-      margin-top: 1.5rem;
-
-      .arrowImg {
-        width: 20px !important;
-      }
     }
   }
 }
@@ -299,13 +263,7 @@
     }
 
     button {
-      font-size: 0.8rem;
-    }
-
-    .arrow {
-      .arrowImg {
-        width: 22px !important;
-      }
+      font-size: 0.8rem !important;
     }
   }
 }
@@ -341,13 +299,7 @@
     }
 
     button {
-      font-size: 0.85rem;
-    }
-
-    .arrow {
-      .arrowImg {
-        width: 24px !important;
-      }
+      font-size: 0.85rem !important;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../public/components/header.module.scss";
 import Link from "next/link";
 import {
@@ -9,13 +9,50 @@ import {
 } from "framer-motion";
 
 const navItems = [
-  { label: "home", href: "#home" },
-  { label: "about", href: "#about" },
-  { label: "projects", href: "#projects" },
-  { label: "contact", href: "#contact" },
+  { label: "home", href: "#home", id: "home" },
+  { label: "about", href: "#about", id: "about" },
+  { label: "projects", href: "#projects", id: "projects" },
+  { label: "contact", href: "#contact", id: "contact" },
 ];
 
+const socials = [
+  { label: "GitHub", icon: "github", href: "https://github.com/jxsh2" },
+  {
+    label: "LinkedIn",
+    icon: "linkedin",
+    href: "https://www.linkedin.com/in/idan-josh-bosi/",
+  },
+];
+
+const SECTION_IDS = navItems.map((item) => item.id);
+
 const easing = [0.25, 0.1, 0.25, 1];
+
+const useActiveSection = (ids) => {
+  const [active, setActive] = useState(ids[0]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [ids]);
+
+  return active;
+};
 
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,112 +62,157 @@ const HeaderSection = () => {
     damping: 24,
     mass: 0.3,
   });
+  const activeSection = useActiveSection(SECTION_IDS);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
 
   const handleNavClick = () => setIsMenuOpen(false);
 
   return (
-    <motion.div
-      className={styles.cont}
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { y: -40, opacity: 0 },
-        visible: {
-          y: 0,
-          opacity: 1,
-          transition: {
-            duration: 0.6,
-            ease: easing,
-            delay: 0.1,
-            when: "beforeChildren",
-            staggerChildren: 0.08,
-          },
-        },
-      }}
-    >
+    <>
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: easing, delay: 0.1 }}
-      >
-        <Link href="/" passHref>
-          <motion.label
-            style={{ cursor: "pointer" }}
-            onClick={() => (window.location.href = "/")}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            idan josh bosi
-          </motion.label>
-        </Link>
-      </motion.div>
-
-      <nav className={styles.desktopNav}>
-        <ul>
-          {navItems.map((item, index) => (
-            <motion.li
-              key={item.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                ease: easing,
-                delay: 0.15 + index * 0.06,
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <Link href={item.href}>
-                <motion.span transition={{ duration: 0.2 }}>
-                  {item.label}
-                </motion.span>
-              </Link>
-              {index < navItems.length - 1 && (
-                <span style={{ margin: "0 10px" }}>-</span>
-              )}
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
-
-      <motion.button
-        type="button"
-        className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ""}`}
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-        aria-label="Toggle navigation menu"
-        aria-expanded={isMenuOpen}
+        className={styles.scrollProgress}
+        style={{ scaleX: progress }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: easing, delay: 0.1 }}
-      >
-        <span />
-        <span />
-        <span />
-      </motion.button>
+        transition={{ duration: 0.6, delay: 0.3 }}
+      />
 
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.nav
-            className={styles.mobileNav}
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3, ease: easing }}
-          >
-            <ul>
-              {navItems.map((item) => (
+      <motion.div
+        className={styles.headerBar}
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: easing, delay: 0.15 }}
+      >
+        <Link href="#home" className={styles.nameChip}>
+          <span className={styles.nameChipName}>idan josh bosi</span>
+          <span className={styles.nameChipDivider}>/</span>
+          <span className={styles.nameChipRole}>developer</span>
+        </Link>
+
+        <nav className={styles.desktopNav}>
+          <ul>
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+
+              return (
                 <li key={item.label}>
-                  <Link href={item.href} onClick={handleNavClick}>
+                  <Link
+                    href={item.href}
+                    className={`${styles.navChip} ${
+                      isActive ? styles.navChipActive : ""
+                    }`}
+                  >
                     {item.label}
                   </Link>
                 </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ""}`}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </motion.div>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className={styles.mobileOverlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: easing }}
+          >
+            <button
+              type="button"
+              className={styles.overlayClose}
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close navigation menu"
+            >
+              &times;
+            </button>
+
+            <nav className={styles.overlayNav}>
+              <ul>
+                {navItems.map((item, index) => (
+                  <motion.li
+                    key={item.label}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 16 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: easing,
+                      delay: 0.1 + index * 0.07,
+                    }}
+                  >
+                    <Link href={item.href} onClick={handleNavClick}>
+                      <span className={styles.overlayIndex}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+
+            <motion.div
+              className={styles.overlaySocials}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  {social.label}
+                </a>
               ))}
-            </ul>
-          </motion.nav>
+            </motion.div>
+
+            <motion.span
+              className={styles.overlaySignature}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+            >
+              idan josh bosi
+            </motion.span>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      <motion.div className={styles.scrollProgress} style={{ scaleX: progress }} />
-    </motion.div>
+    </>
   );
 };
 

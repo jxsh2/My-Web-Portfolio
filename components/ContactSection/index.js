@@ -100,7 +100,12 @@ const ContactSection = () => {
                 animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
                 transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
               />
-              Available for freelance &amp; full-time opportunities
+              <span className={style.availabilityFull}>
+                Available for freelance &amp; full-time opportunities
+              </span>
+              <span className={style.availabilityShort}>
+                Available for work
+              </span>
             </motion.div>
           </motion.div>
 

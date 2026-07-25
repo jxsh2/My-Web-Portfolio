@@ -9,7 +9,6 @@ import {
   useSpring,
 } from "framer-motion";
 import styles from "../../public/components/hero-section.module.scss";
-import arrow from "../../public/static/images/other/arrow.png";
 import profile from "../../public/static/images/projects/PROF.jpg";
 import ResumeModal from "../ResumeModal";
 import Magnetic from "../generics/Magnetic";
@@ -220,44 +219,6 @@ const HeroSection = () => {
           </div>
 
           <HeroPhoto />
-        </motion.div>
-
-        <motion.div
-          className={styles.arrow}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, -10, 0] }}
-          transition={{
-            opacity: { duration: 0.6, delay: 1 },
-            y: {
-              repeat: Infinity,
-              duration: 1.6,
-              ease: "easeInOut",
-              delay: 1.2,
-            },
-          }}
-        >
-          <button
-            onClick={() =>
-              document
-                .querySelector("#about")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            style={{
-              color: "transparent",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-            }}
-          >
-            <Image
-              src={arrow}
-              alt="Scroll down arrow"
-              className={styles.arrowImg}
-              fill={false}
-              width={32}
-              height={32}
-            />
-          </button>
         </motion.div>
       </div>
 
