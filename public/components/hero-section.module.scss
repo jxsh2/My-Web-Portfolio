@@ -238,6 +238,16 @@
   .lineInner {
     font-size: clamp(3rem, 9.5vw, 6rem);
   }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .blurb {
+    max-width: 100%;
+  }
 }
 
 // MEDIUM DESKTOP / LAPTOP
