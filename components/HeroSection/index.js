@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Button } from "semantic-ui-react";
 import Image from "next/image";
 import {
@@ -16,6 +16,12 @@ import Magnetic from "../generics/Magnetic";
 
 const revealEase = [0.65, 0, 0.35, 1];
 
+const NAME = "Idan Josh Bosi";
+const TYPE_SPEED = 95;
+const DELETE_SPEED = 45;
+const PAUSE_FULL = 1800;
+const PAUSE_EMPTY = 500;
+
 const RevealLine = ({ children, delay = 0 }) => (
   <span className={styles.revealMask}>
     <motion.span
@@ -28,6 +34,54 @@ const RevealLine = ({ children, delay = 0 }) => (
     </motion.span>
   </span>
 );
+
+const TypewriterName = () => {
+  const [started, setStarted] = useState(false);
+  const [text, setText] = useState("");
+  const [phase, setPhase] = useState("typing");
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => setStarted(true), 500);
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!started) return undefined;
+
+    let timeout;
+
+    if (phase === "typing") {
+      if (text.length < NAME.length) {
+        timeout = setTimeout(
+          () => setText(NAME.slice(0, text.length + 1)),
+          TYPE_SPEED
+        );
+      } else {
+        timeout = setTimeout(() => setPhase("deleting"), PAUSE_FULL);
+      }
+    } else {
+      if (text.length > 0) {
+        timeout = setTimeout(
+          () => setText(NAME.slice(0, text.length - 1)),
+          DELETE_SPEED
+        );
+      } else {
+        timeout = setTimeout(() => setPhase("typing"), PAUSE_EMPTY);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [started, text, phase]);
+
+  return (
+    <h1 aria-label={NAME}>
+      <span className={styles.nameAccent} aria-hidden="true">
+        {text}
+        <span className={styles.typeCursor} />
+      </span>
+    </h1>
+  );
+};
 
 const HeroPhoto = () => {
   const cardRef = useRef(null);
@@ -108,23 +162,8 @@ const HeroSection = () => {
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
-  const handleMouseMove = (e) => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    el.style.setProperty("--x", `${e.clientX - rect.left}px`);
-    el.style.setProperty("--y", `${e.clientY - rect.top}px`);
-  };
-
   return (
-    <section
-      className={styles.heroCont}
-      id="home"
-      ref={sectionRef}
-      onMouseMove={handleMouseMove}
-    >
-      <div className={styles.spotlight} />
-
+    <section className={styles.heroCont} id="home" ref={sectionRef}>
       <div className="wrapper">
         <motion.div
           className={styles.heroLayout}
@@ -135,11 +174,7 @@ const HeroSection = () => {
               <RevealLine delay={0.1}>Hello, I&apos;m</RevealLine>
             </p>
 
-            <h1>
-              <RevealLine delay={0.25}>
-                <span className={styles.nameAccent}>Idan Josh Bosi</span>
-              </RevealLine>
-            </h1>
+            <TypewriterName />
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}
