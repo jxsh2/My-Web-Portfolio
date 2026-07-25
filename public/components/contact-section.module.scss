@@ -1,34 +1,59 @@
 @use "../public/abstracts/__abstracts-dir" as abstract;
 
 .contactSection {
-  padding: 3rem 3rem;
+  padding: 6rem 3rem;
   font-style: "Poppins", sans-serif;
+
   h2 {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-align: center;
-    margin-bottom: 5rem;
+    color: var(--color-text-faint);
+    margin-bottom: 3rem;
+  }
+
+  .underline {
+    display: block;
+    width: 32px;
+    height: 1px;
+    margin: 0.85rem auto 0;
+    background: var(--color-accent);
+    transform-origin: center;
   }
 
   .contactGrid {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+
     h3 {
-      font-weight: 500;
-      font-size: 1rem;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
       margin-bottom: 1rem;
     }
 
     .email {
+      .magneticEmail {
+        display: inline-block;
+      }
+
       a {
         font-weight: 700;
-        font-size: 6rem;
-        line-height: 100%;
+        font-size: 4.5rem;
+        line-height: 110%;
         text-decoration: none;
         white-space: normal;
         word-break: break-word;
-        margin-bottom: 1rem;
+        color: var(--color-text) !important;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--color-accent) !important;
+        }
       }
     }
   }
@@ -37,21 +62,22 @@
 //mobile
 @include abstract.mobile {
   .contactSection {
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
+
     h2 {
-      font-size: 0.8rem !important;
+      font-size: 0.75rem !important;
       margin-bottom: 2rem !important;
     }
 
     .contactGrid {
       h3 {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         margin-bottom: 0.5rem;
       }
 
       .email {
         a {
-          font-size: 1.1rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -61,7 +87,8 @@
 //phablet
 @include abstract.phablet {
   .contactSection {
-    padding: 2rem 2rem;
+    padding: 4rem 2rem;
+
     h2 {
       font-size: 0.8rem !important;
       margin-bottom: 2rem !important;
@@ -69,13 +96,13 @@
 
     .contactGrid {
       h3 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
       }
 
       .email {
         a {
-          font-size: 2rem;
+          font-size: 2.25rem;
         }
       }
     }
@@ -85,21 +112,22 @@
 //tablet
 @include abstract.tablet {
   .contactSection {
-    padding: 2rem 2rem;
+    padding: 4.5rem 2rem;
+
     h2 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-bottom: 2rem !important;
     }
 
     .contactGrid {
       h3 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
       }
 
       .email {
         a {
-          font-size: 3.2rem;
+          font-size: 3rem;
         }
       }
     }

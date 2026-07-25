@@ -1,63 +1,128 @@
 @use "../abstracts/__abstracts-dir" as abstract;
 
 .heroCont {
+  position: relative;
+  overflow: hidden;
   min-height: 100dvh;
-  padding: 0 3rem 0;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 !important;
   font-style: "Poppins", sans-serif;
+
+  .spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      600px circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 255, 255, 0.06),
+      transparent 60%
+    );
+    transition: opacity 0.5s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .spotlight {
+      opacity: 1;
+    }
+  }
+
   .heroInfo {
-    h5 {
-      font-weight: 700;
-      font-size: 5rem;
-      color: #d8d2c2;
-    }
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    h1 {
-      font-size: 7rem;
-      font-weight: 700;
-      line-height: 110%;
+  .revealMask {
+    display: block;
+    overflow: hidden;
+  }
 
-      text-align: center;
-      overflow-wrap: break-word;
-      span {
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px #d96d39;
-        text-shadow: 0 0 5px #d96d39;
-      }
-    }
+  .revealInner {
+    display: block;
+  }
 
-    p {
-      font-weight: 200 !important;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem 7rem 0rem;
-      text-align: center;
+  .introLine {
+    font-weight: 400 !important;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 108%;
+    text-align: center;
+    overflow-wrap: break-word;
+    color: var(--color-text);
+
+    .nameAccent {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px var(--color-accent);
+      text-shadow: 0 0 24px var(--color-accent-soft);
     }
+  }
+
+  p {
+    font-weight: 300 !important;
+    font-size: 1.05rem;
+    line-height: 170%;
+    color: var(--color-text-muted);
+    margin: 1.5rem 0 2.5rem;
+    max-width: 32rem;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.85rem;
+    margin: 0 0.35rem;
+  }
+
+  .buttonGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .buttonRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .magneticBtn {
+    display: inline-block;
+  }
+
+  .arrow {
+    margin-top: 3.5rem;
 
     button {
-      font-size: 1rem;
-      margin: 0 0.3rem 0;
-    }
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
 
-    .buttonGrid {
-      text-align: center;
-    }
+      &:hover {
+        background: transparent !important;
+        transform: none;
+      }
 
-    .arrow {
-      margin: 8px;
-      justify-self: end;
-
-      button {
-        background-color: transparent !important;
-        .arrowImg {
-          cursor: pointer;
-          width: 32px;
-          height: auto;
-          object-fit: contain;
-        }
+      .arrowImg {
+        cursor: pointer;
+        width: 28px;
+        height: auto;
+        object-fit: contain;
+        opacity: 0.6;
+        filter: grayscale(1) brightness(1.6);
       }
     }
   }
@@ -66,43 +131,54 @@
 // MOBILE
 @include abstract.mobile {
   .heroCont {
-    padding: 0 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 1.5rem;
     width: 100%;
 
-    .heroInfo {
-      text-align: left;
+    .introLine {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
 
-      h5 {
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-      }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 118%;
+      overflow-wrap: break-word;
+    }
 
-      h1 {
-        font-size: 4rem;
-        line-height: 120%;
-        overflow-wrap: break-word;
-      }
+    p {
+      font-size: 0.85rem;
+      line-height: 165%;
+      margin: 1rem 0 1.75rem;
+      text-align: center;
+    }
 
-      p {
-        font-size: 0.5rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        padding: 0;
-      }
+    .buttonGrid {
+      gap: 0.6rem;
+      width: 100%;
+    }
 
-      button {
-        font-size: 0.5rem;
-      }
+    .buttonRow {
+      flex-direction: column;
+      gap: 0.6rem;
+      width: 100%;
+    }
 
-      .arrow {
-        margin-top: 32px;
-        justify-self: flex-end;
-        .arrowImg {
-          width: 16px !important;
-        }
+    .magneticBtn {
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      font-size: 0.75rem;
+      width: 100%;
+      margin: 0;
+    }
+
+    .arrow {
+      margin-top: 2rem;
+
+      .arrowImg {
+        width: 20px !important;
       }
     }
   }
@@ -111,36 +187,31 @@
 // PHABLET
 @include abstract.phablet {
   .heroCont {
-    padding: 0 1rem 0;
+    padding: 0 2rem;
     padding-top: 3rem;
 
-    .heroInfo {
-      text-align: left;
+    .introLine {
+      font-size: 0.95rem;
+    }
 
-      h5 {
-        font-size: 3rem;
-      }
+    h1 {
+      font-size: 3.4rem;
+      line-height: 118%;
+      overflow-wrap: break-word;
+    }
 
-      h1 {
-        font-size: 6rem;
-        line-height: 120%;
-        overflow-wrap: break-word;
-      }
+    p {
+      font-size: 0.9rem;
+      margin: 1rem 0 1.75rem;
+    }
 
-      p {
-        font-size: 0.7rem;
-        margin-bottom: 0.5rem;
-        padding: 0;
-      }
+    button {
+      font-size: 0.8rem;
+    }
 
-      button {
-        font-size: 0.7rem;
-      }
-
-      .arrow {
-        .arrowImg {
-          width: 20px !important;
-        }
+    .arrow {
+      .arrowImg {
+        width: 22px !important;
       }
     }
   }
@@ -150,33 +221,31 @@
 @include abstract.tablet {
   .heroCont {
     display: flex;
-    padding: 0 2rem 0;
+    padding: 0 2rem;
     padding-top: 3rem;
-    .heroInfo {
-      h5 {
-        font-size: 4.5rem;
-      }
 
-      h1 {
-        font-size: 7rem;
-        line-height: 120%;
-        overflow-wrap: break-word;
-      }
+    .introLine {
+      font-size: 1rem;
+    }
 
-      p {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
-        padding: 0;
-      }
+    h1 {
+      font-size: 4.2rem;
+      line-height: 116%;
+      overflow-wrap: break-word;
+    }
 
-      button {
-        font-size: 0.8rem;
-      }
+    p {
+      font-size: 0.95rem;
+      margin: 1.25rem 0 2rem;
+    }
 
-      .arrow {
-        .arrowImg {
-          width: 28px !important;
-        }
+    button {
+      font-size: 0.85rem;
+    }
+
+    .arrow {
+      .arrowImg {
+        width: 24px !important;
       }
     }
   }

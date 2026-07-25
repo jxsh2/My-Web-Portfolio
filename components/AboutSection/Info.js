@@ -56,6 +56,13 @@ const InfoSection = () => {
           viewport={{ once: true, amount: 0.5 }}
         >
           About Me
+          <motion.span
+            className={styles.underline}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true, amount: 0.5 }}
+          />
         </motion.div>
 
         <div className={styles.infoGrid}>
@@ -76,6 +83,7 @@ const InfoSection = () => {
             deep learning through academic projects, broadening my expertise in
             emerging technologies. I am eager to apply my skills and continue
             learning in full stack development and artificial intelligence.
+            <p className={styles.techHeader}>Tech Stack</p>
             <motion.div
               className={styles.techStack}
               variants={containerVariants}
@@ -100,24 +108,25 @@ const InfoSection = () => {
 
           <motion.div
             className={styles.profileCont}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+            transition={{ duration: 1, ease: [0.65, 0, 0.35, 1], delay: 0.15 }}
             viewport={{ once: true, amount: 0.5 }}
-            whileHover={{
-              scale: 1.05,
-              filter: "brightness(1.1)",
-              transition: { duration: 0.3 },
-            }}
           >
-            <Image
-              src={travel}
-              alt="profile"
-              width={500}
-              height={500}
-              className={styles.profile}
-              priority
-            />
+            <motion.div
+              whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+              transition={{ duration: 0.3 }}
+              className={styles.profileInner}
+            >
+              <Image
+                src={travel}
+                alt="profile"
+                width={500}
+                height={500}
+                className={styles.profile}
+                priority
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>

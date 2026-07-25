@@ -1,15 +1,24 @@
 @use "../abstracts/__abstracts-dir" as abstract;
 
 .infoCont {
-  padding: 3rem 3rem;
+  padding: 6rem 3rem;
   font-style: "Poppins", sans-serif;
+
   .infoTitle {
-    margin-top: 2rem !important;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-weight: 700 !important;
-    font-size: 5rem !important;
+    font-size: 2.75rem !important;
     align-items: flex-start;
-    color: #d96d39;
+    color: var(--color-text);
+  }
+
+  .underline {
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin-top: 1rem;
+    background: var(--color-accent);
+    transform-origin: left center;
   }
 
   .infoGrid {
@@ -26,64 +35,109 @@
     justify-self: start;
     font-weight: 300;
     font-size: 1rem;
-    line-height: 170%;
+    line-height: 175%;
+    color: var(--color-text-muted);
     text-align: justify;
   }
+
   .profileCont {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 420px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+
+    .profileInner {
+      width: 100%;
+      height: 100%;
+    }
 
     img,
     .profile {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 42px;
-      padding: 0.5rem;
+      filter: grayscale(0.25);
     }
 
     @include abstract.mobile {
-      max-width: 200px;
-      aspect-ratio: 1 / 1;
+      max-width: 220px;
     }
 
     @include abstract.phablet {
-      max-width: 250px;
-      aspect-ratio: 1 / 1;
+      max-width: 260px;
     }
 
     @include abstract.tablet {
       max-width: 300px;
-      aspect-ratio: 1 / 1;
     }
+  }
+}
+
+.techHeader {
+  margin-top: 1.75rem !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.techTag {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 
 // Mobile
 @include abstract.mobile {
   .infoCont {
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
 
     .infoTitle {
-      align-items: center !important;
-      font-size: 1rem !important;
-      margin-bottom: 8px;
+      font-size: 1.6rem !important;
+      margin-bottom: 1.5rem;
+      text-align: center;
+
+      .underline {
+        margin: 1rem auto 0;
+      }
     }
 
     .infoGrid {
       display: flex;
       flex-direction: column-reverse;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .infoContent {
       text-align: center;
-      font-size: 0.6rem;
+      font-size: 0.85rem;
       line-height: 170%;
-      text-align: justify;
     }
   }
 
@@ -94,31 +148,28 @@
 
   .techStack {
     justify-content: center;
-    gap: 0.2rem;
-    margin-top: 0.5rem;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
   }
 
   .techTag {
-    font-size: 0.5rem !important;
-    padding: 0.3rem 0.3rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.4rem 0.75rem !important;
   }
 }
 
 // Phablet
 @include abstract.phablet {
   .infoCont {
-    padding: 3rem 2rem;
-    margin: auto;
-    align-items: center;
+    padding: 4rem 2rem;
 
     .infoTitle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px !important;
-      font-size: 1.2rem !important;
-      margin: 0;
+      font-size: 2rem !important;
+      text-align: center;
+
+      .underline {
+        margin: 1rem auto 0;
+      }
     }
 
     .infoGrid {
@@ -128,9 +179,8 @@
 
     .infoContent {
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       line-height: 170%;
-      text-align: justify;
     }
   }
 
@@ -141,84 +191,42 @@
 
   .techStack {
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.4rem;
     margin-top: 0.75rem;
   }
 
   .techTag {
-    font-size: 0.5rem;
-    padding: 0.4rem 0.65rem;
+    font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
 // Tablet
 @include abstract.tablet {
   .infoCont {
-    padding: 3rem 2rem;
-    margin: auto;
-    align-items: center;
+    padding: 4.5rem 2rem;
 
     .infoTitle {
-      margin-bottom: 24px !important;
-      font-size: 3rem !important;
-      margin: 0;
+      font-size: 2.25rem !important;
     }
 
     .infoContent {
-      font-size: 0.6rem;
-      line-height: 150%;
-      text-align: justify;
+      font-size: 0.85rem;
+      line-height: 165%;
     }
   }
+
   .techHeader {
     font-size: 0.8rem;
-    text-align: left;
   }
 
   .techStack {
-    justify-content: flex-start;
-    gap: 0.4rem;
+    gap: 0.45rem;
     margin-top: 1rem;
   }
 
   .techTag {
-    font-size: 0.6rem;
-    padding: 0.45rem 0.75rem;
-  }
-}
-
-// new styling not responsive yet
-
-.techHeader {
-  margin-top: 1rem !important;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #3f4f44; // or #333 based on your background
-}
-
-.techStack {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.15rem;
-  margin: 0.5rem 0 0.5rem;
-}
-.techTag {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  font-family: "Fira Code", monospace;
-  font-weight: 500;
-  color: #dcd7c9;
-  background: #3f4f44;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, background 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    background: #d96d39;
+    font-size: 0.7rem;
+    padding: 0.45rem 0.85rem;
   }
 }

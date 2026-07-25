@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import style from "../../public/components/contact-section.module.scss";
+import Magnetic from "../generics/Magnetic";
 
 const ContactSection = () => {
   return (
@@ -14,6 +15,13 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.6 }}
         >
           Want to work with me?
+          <motion.span
+            className={style.underline}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true, amount: 0.6 }}
+          />
         </motion.h2>
 
         <div className={style.contactGrid}>
@@ -42,14 +50,12 @@ const ContactSection = () => {
               delay: 0.9,
             }}
             viewport={{ once: true, amount: 0.5 }}
-            whileHover={{
-              scale: 1,
-              transition: { duration: 0.3, ease: "easeInOut" },
-            }}
           >
-            <a href="mailto:idan.bosi@example.com">
-              Let’s build something awesome together
-            </a>
+            <Magnetic strength={12} className={style.magneticEmail}>
+              <a href="mailto:joshidanbosi02@gmail.com">
+                Let’s build something awesome together
+              </a>
+            </Magnetic>
           </motion.div>
         </div>
       </div>

@@ -2,298 +2,305 @@
 
 .projectGrid {
   width: 100%;
-  padding: 3rem 3rem;
+  padding: 6rem 3rem;
   font-style: "Poppins", sans-serif;
-  h2 {
-    font-size: 1.5rem !important;
-    font-weight: 500 !important;
-    text-align: center;
-    margin-bottom: 5rem;
+
+  .sectionHead {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0;
+    }
+
+    .count {
+      margin-left: auto;
+      font-family: "Fira Code", monospace;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
   }
 
-  .gridCont {
-    margin: auto;
-    justify-content: center !important;
-    display: flex !important;
+  .projectList {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-border);
+  }
 
-    .colGrid {
-      padding: 1rem !important;
-      margin: auto !important;
+  .projectRow {
+    display: grid;
+    grid-template-columns: 56px 1fr 200px 100px;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background 0.35s ease, padding 0.35s ease;
 
-      .projectCard {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.15); /* translucent white */
-        backdrop-filter: blur(10px); /* frosted glass blur */
-        -webkit-backdrop-filter: blur(10px); /* Safari support */
-        border: 1px solid rgba(255, 255, 255, 0.3); /* subtle glass border */
+    &:hover {
+      background: var(--color-surface);
+      padding-left: 1rem;
+      padding-right: 1rem;
 
-        .imageWrapper {
-          width: 100%;
-          aspect-ratio: 5 / 3;
-          position: relative;
-          overflow: hidden;
+      .rowThumb {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
 
-          img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.3));
-          }
+      .rowImage {
+        filter: grayscale(0);
+      }
 
-          .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 2;
-            pointer-events: none;
+      h3 {
+        color: var(--color-accent);
+      }
 
-            .overlayText {
-              color: whitesmoke;
-              font-size: 1.2rem;
-              font-weight: 500;
-              background: rgba(255, 255, 255, 0.15);
-              padding: 10px 20px;
-              border-radius: 8px;
-              -webkit-backdrop-filter: blur(4px);
-              backdrop-filter: blur(4px);
-            }
-          }
+      .rowAction {
+        color: var(--color-text);
 
-          &:hover .overlay {
-            opacity: 1;
-            pointer-events: auto;
-          }
-        }
-
-        .content {
-          padding: 1rem !important;
-          position: relative;
-          min-height: 150px;
-        }
-
-        h6,
-        p {
-          font-family: "Fira Code", monospace !important;
-          line-height: 150% !important;
-          white-space: normal;
-          word-wrap: break-word;
-        }
-
-        h6 {
-          font-weight: 700;
-          font-size: 0.9rem !important;
-          color: #d96d39 !important;
-        }
-
-        p {
-          font-size: 0.7rem;
-          font-weight: 300;
-          color: #d8d2c2 !important;
-          margin-top: 0.5rem !important;
-        }
-        &:hover {
-          transform: translateY(-8px);
+        .rowArrow {
+          transform: rotate(-45deg) translate(3px, -3px);
         }
       }
     }
-  }
 
-  .customModal {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-
-    .content {
-      background: transparent !important;
-      padding: 0 !important;
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
+    .rowIndex {
+      font-family: "Fira Code", monospace;
+      font-size: 0.85rem;
+      color: var(--color-text-faint);
     }
 
-    .close.icon {
-      color: black !important;
-      font-size: 1.5rem;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
+    .rowBody {
+      min-width: 0;
+
+      h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--color-text);
+        margin-bottom: 0.4rem;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        font-size: 0.85rem;
+        font-weight: 300;
+        line-height: 160%;
+        color: var(--color-text-muted);
+        max-width: 42rem;
+      }
+    }
+
+    .rowTags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.85rem;
+    }
+
+    .rowTag {
+      font-family: "Fira Code", monospace;
+      font-size: 0.65rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+    }
+
+    .rowThumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      opacity: 0;
+      transform: scale(0.96) translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+
+      .rowImage {
+        object-fit: cover;
+        filter: grayscale(1);
+        transition: filter 0.4s ease;
+      }
+    }
+
+    .rowAction {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: color 0.3s ease;
+      white-space: nowrap;
+
+      .rowArrow {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .rowUnavailable {
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--color-text-faint);
+    }
+
+    &.noLink {
+      cursor: default;
     }
   }
 }
 
 .showMoreButton {
-  margin-top: 1rem !important;
+  margin-top: 2.5rem !important;
   text-align: center;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 // ---------- Responsive Mixins ---------- //
 
 @include abstract.mobile {
   .projectGrid {
-    padding: 2rem 1rem;
+    padding: 4rem 1.25rem;
 
-    h2 {
-      font-size: 0.8rem !important;
-      margin-bottom: 1rem;
+    .sectionHead {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+
+      .eyebrow {
+        font-size: 0.65rem;
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .count {
+        font-size: 0.7rem;
+      }
     }
 
-    .gridCont {
-      .colGrid {
-        .projectCard {
-          .imageWrapper {
-            aspect-ratio: 5 / 3;
+    .projectRow {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      padding: 1.5rem 0;
 
-            .overlay .overlayText {
-              font-size: 0.6rem;
-              padding: 6px 12px;
-            }
-          }
+      &:hover {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
 
-          h6 {
-            font-size: 0.5rem !important;
-          }
+      .rowIndex {
+        font-size: 0.75rem;
+      }
 
-          p {
-            font-size: 0.5rem;
-          }
+      .rowBody h3 {
+        font-size: 1rem;
+      }
 
-          .content {
-            min-height: 120px !important;
-            padding: 0.5rem !important;
-          }
+      .rowBody p {
+        font-size: 0.78rem;
+      }
 
-          .iconContainer {
-            bottom: 2px;
-            right: 10px;
-          }
+      .rowThumb {
+        opacity: 1;
+        transform: none;
+        aspect-ratio: 16 / 10;
 
-          .icon {
-            font-size: 0.6rem !important;
-          }
+        .rowImage {
+          filter: grayscale(0.4);
         }
+      }
+
+      .rowAction {
+        justify-content: flex-start;
       }
     }
   }
 
-  .showMoreButton {
-    margin: 0 !important;
-
-    button {
-      font-size: 0.7rem !important;
-    }
+  .showMoreButton button {
+    font-size: 0.75rem !important;
   }
 }
 
 @include abstract.phablet {
   .projectGrid {
-    padding: 2rem !important;
-    align-items: center;
+    padding: 4rem 2rem;
 
-    h2 {
-      font-size: 0.8rem !important;
-      margin-bottom: 2rem !important;
+    .sectionHead h2 {
+      font-size: 2rem;
     }
 
-    .gridCont {
-      .colGrid {
-        .projectCard {
-          .imageWrapper {
-            aspect-ratio: 5 / 3;
+    .projectRow {
+      grid-template-columns: 40px 1fr 150px 90px;
+      gap: 1.25rem;
 
-            .overlay .overlayText {
-              font-size: 0.8rem;
-              padding: 8px 16px;
-            }
-          }
+      .rowThumb {
+        opacity: 1;
+        transform: none;
 
-          h6 {
-            font-size: 0.6rem !important;
-          }
-
-          p {
-            font-size: 0.5rem;
-          }
-
-          .content {
-            min-height: 110px !important;
-            padding: 1rem;
-          }
+        .rowImage {
+          filter: grayscale(0.4);
         }
+      }
+
+      .rowBody p {
+        font-size: 0.78rem;
       }
     }
   }
 
-  .showMoreButton {
-    margin: 0 !important;
-
-    button {
-      font-size: 0.7rem !important;
-    }
+  .showMoreButton button {
+    font-size: 0.8rem !important;
   }
 }
 
 @include abstract.tablet {
   .projectGrid {
-    padding: 2rem !important;
-    align-items: center;
+    padding: 4rem 2rem;
 
-    h2 {
-      font-size: 1rem;
-      margin-bottom: 2rem !important;
+    .sectionHead h2 {
+      font-size: 2.2rem;
     }
 
-    .gridCont {
-      .colGrid {
-        .projectCard {
-          .imageWrapper {
-            aspect-ratio: 5 / 3;
+    .projectRow {
+      grid-template-columns: 48px 1fr 180px 90px;
+      gap: 1.5rem;
 
-            .overlay .overlayText {
-              font-size: 1rem;
-              padding: 10px 18px;
-            }
-          }
+      .rowThumb {
+        opacity: 1;
+        transform: none;
 
-          h6 {
-            font-size: 0.6rem !important;
-          }
-
-          p {
-            font-size: 0.5rem;
-          }
-
-          .content {
-            padding: 1rem;
-            min-height: 150px !important;
-          }
+        .rowImage {
+          filter: grayscale(0.25);
         }
       }
     }
   }
 
-  .showMoreButton {
-    margin: 0.5rem !important;
-
-    button {
-      font-size: 0.8rem !important;
-    }
+  .showMoreButton button {
+    font-size: 0.85rem !important;
   }
 }

@@ -1,0 +1,86 @@
+.loaderRoot {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  pointer-events: none;
+}
+
+.panelTop,
+.panelBottom {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-bg);
+}
+
+.panelTop {
+  top: 0;
+}
+
+.panelBottom {
+  bottom: 0;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.initials {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+
+  span {
+    display: inline-block;
+  }
+}
+
+.progressTrack {
+  width: 140px;
+  height: 1px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.progressFill {
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent);
+  transform-origin: left center;
+}
+
+.fullName {
+  font-family: "Fira Code", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+@media screen and (max-width: 480px) {
+  .initials {
+    font-size: 2.2rem;
+    gap: 0.45rem;
+  }
+
+  .progressTrack {
+    width: 100px;
+  }
+
+  .fullName {
+    font-size: 0.6rem;
+  }
+}

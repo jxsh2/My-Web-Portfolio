@@ -1,6 +1,12 @@
+import { useState } from "react";
 import styles from "../../public/components/header.module.scss";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 
 const navItems = [
   { label: "home", href: "#home" },
@@ -12,6 +18,16 @@ const navItems = [
 const easing = [0.25, 0.1, 0.25, 1];
 
 const HeaderSection = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 24,
+    mass: 0.3,
+  });
+
+  const handleNavClick = () => setIsMenuOpen(false);
+
   return (
     <motion.div
       className={styles.cont}
@@ -23,11 +39,11 @@ const HeaderSection = () => {
           y: 0,
           opacity: 1,
           transition: {
-            duration: 0.8,
+            duration: 0.6,
             ease: easing,
-            delay: 4.2,
+            delay: 0.1,
             when: "beforeChildren",
-            staggerChildren: 0.15,
+            staggerChildren: 0.08,
           },
         },
       }}
@@ -35,7 +51,7 @@ const HeaderSection = () => {
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: easing, delay: 1.4 }}
+        transition={{ duration: 0.5, ease: easing, delay: 0.1 }}
       >
         <Link href="/" passHref>
           <motion.label
@@ -49,7 +65,7 @@ const HeaderSection = () => {
         </Link>
       </motion.div>
 
-      <nav>
+      <nav className={styles.desktopNav}>
         <ul>
           {navItems.map((item, index) => (
             <motion.li
@@ -57,9 +73,9 @@ const HeaderSection = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.5,
                 ease: easing,
-                delay: 1.5 + index * 0.1,
+                delay: 0.15 + index * 0.06,
               }}
               whileHover={{ scale: 1.05 }}
             >
@@ -75,6 +91,45 @@ const HeaderSection = () => {
           ))}
         </ul>
       </nav>
+
+      <motion.button
+        type="button"
+        className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ""}`}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: easing, delay: 0.1 }}
+      >
+        <span />
+        <span />
+        <span />
+      </motion.button>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            className={styles.mobileNav}
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.3, ease: easing }}
+          >
+            <ul>
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} onClick={handleNavClick}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+
+      <motion.div className={styles.scrollProgress} style={{ scaleX: progress }} />
     </motion.div>
   );
 };

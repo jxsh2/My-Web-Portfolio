@@ -1,0 +1,151 @@
+@use "../abstracts/__abstracts-dir" as abstract;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(8, 8, 8, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem 2.25rem;
+  border-radius: 20px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  font-family: "Poppins", sans-serif;
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 160%;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text-muted) !important;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    transform: rotate(90deg);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+
+    &::placeholder {
+      color: var(--color-text-faint);
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+      background: var(--color-surface-hover);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  button {
+    width: 100%;
+    background-color: var(--color-accent-soft) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+
+    &:hover {
+      background-color: var(--color-accent) !important;
+      color: var(--color-bg) !important;
+    }
+  }
+}
+
+.errorText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  border-left: 2px solid var(--color-text-muted);
+  padding-left: 0.6rem;
+  margin-top: -0.3rem;
+}
+
+.successState {
+  text-align: left;
+
+  .doneButton {
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--color-accent-soft) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+
+    &:hover {
+      background-color: var(--color-accent) !important;
+      color: var(--color-bg) !important;
+    }
+  }
+}
+
+@include abstract.mobile {
+  .modal {
+    padding: 2rem 1.5rem;
+
+    h3 {
+      font-size: 1.15rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}

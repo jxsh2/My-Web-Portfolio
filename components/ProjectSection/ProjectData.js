@@ -4,7 +4,7 @@ import idfrom from "../../public/static/images/projects/idfrom.png";
 import infoman from "../../public/static/images/projects/infoman.png";
 import map from "../../public/static/images/projects/map.png";
 import ppl from "../../public/static/images/projects/ppl.png";
-import vct from "../../public/static/images/projects/VCT.png";
+import vct from "../../public/static/images/projects/vct.png";
 import derma from "../../public/static/images/projects/derma.png";
 
 const projects = [

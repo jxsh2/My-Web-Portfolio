@@ -2,12 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 $font-poppins: "Poppins", sans-serif;
-$dark-blue: #d8d2c2;
-$medium-blue: #d8d2c2;
 
-$orange: #d96d39;
-$light-blue: #d8d2c2;
-$white: #d8d2c2;
+// -------------------------------
+// Grayscale monotone palette
+// -------------------------------
+// Pure black, gray, off-white — no hue anywhere.
+$dark-blue: #f2f2f0;
+$medium-blue: #f2f2f0;
+$orange: #ffffff;
+$light-blue: #f2f2f0;
+$white: #f2f2f0;
+
+:root {
+  --color-bg: #0b0b0b;
+  --color-bg-alt: #151515;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-text: #f2f2f0;
+  --color-text-muted: #8c8c88;
+  --color-text-faint: #5a5a56;
+  --color-accent: #ffffff;
+  --color-accent-soft: rgba(255, 255, 255, 0.1);
+}
 
 // Reset & Global Base Styles
 * {
@@ -27,20 +44,27 @@ html {
 
 body {
   cursor: url(".././public/static/images/other/click.png"), auto;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 }
 html,
 body {
   font-family: $font-poppins !important;
-  color: $white;
+  color: var(--color-text);
   font-size: 1.25rem;
   height: 100%;
   overflow-x: hidden;
-  background: radial-gradient(circle at center, #1a1a1a, #0f0e0e);
-  // background-image: url("../public/static/images/other/blackbg.svg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
-  // background-attachment: fixed;
+  background: radial-gradient(circle at top, var(--color-bg-alt), var(--color-bg) 65%);
 }
 
 #__next {
@@ -50,12 +74,18 @@ body {
 }
 
 a {
-  color: $white !important;
+  color: var(--color-text) !important;
   text-decoration: none;
+  transition: color 0.25s ease;
 
   &:hover {
-    color: $orange !important;
+    color: var(--color-accent) !important;
   }
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
 }
 
 // Utility Classes
@@ -154,21 +184,35 @@ h6 {
 // -------------------------------
 
 button {
-  background-color: #3f4f44 !important;
-  color: #d8d2c2 !important;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  border: none;
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
   cursor: pointer;
   font-family: $font-poppins !important;
   font-weight: 500 !important;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 0.02em;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, transform 0.25s ease;
   overflow: hidden;
   text-align: center !important;
 
   &:hover {
-    background-color: #d96d39 !important; /* Darker hover effect */
-    transform: scale(1.05); /* Slightly increase button size */
+    background-color: var(--color-accent-soft) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
   }
 }
 
@@ -178,10 +222,9 @@ img {
 }
 
 .wrapper {
-  max-width: 1200;
+  max-width: 1200px;
   overflow: hidden;
-  margin: 0;
-  // border: 1px red solid;
+  margin: 0 auto;
   padding: 0;
 }
 

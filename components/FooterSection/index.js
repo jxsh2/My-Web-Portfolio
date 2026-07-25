@@ -1,9 +1,16 @@
-import { Divider, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
+import { motion } from "framer-motion";
 import styles from "../../public/components/footer-section.module.scss";
 
 const FooterSection = () => {
   return (
-    <section className={styles.footer}>
+    <motion.section
+      className={styles.footer}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.6 }}
+    >
       <div className={styles.socialIcons}>
         <a
           href="https://www.instagram.com/idanbsi_/"
@@ -33,14 +40,14 @@ const FooterSection = () => {
         >
           <Icon name="github" size="large" />
         </a>
-        <a href="mailto:joshidabosi02@gmail.com">
+        <a href="mailto:joshidanbosi02@gmail.com">
           <Icon name="mail" size="large" />
         </a>
       </div>
       <div className={styles.credits}>
         <h6>© 2025 Bosi. All rights reserved.</h6>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
