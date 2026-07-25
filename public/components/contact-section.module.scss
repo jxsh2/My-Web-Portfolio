@@ -41,19 +41,67 @@
         display: inline-block;
       }
 
-      a {
+      .emailLink {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-decoration: none;
+      }
+
+      .emailWords {
         font-weight: 700;
         font-size: 4.5rem;
         line-height: 130%;
         padding-bottom: 0.25rem;
-        text-decoration: none;
         white-space: normal;
         word-break: break-word;
-        color: var(--color-text) !important;
-        transition: color 0.3s ease;
+        color: var(--color-text);
+        transition: color 0.3s ease, letter-spacing 0.3s ease;
+      }
 
-        &:hover {
-          color: var(--color-accent) !important;
+      .emailCue {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        transition: color 0.3s ease, border-color 0.3s ease,
+          background 0.3s ease, transform 0.3s ease;
+        @include abstract.glass(16px, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.14));
+      }
+
+      .emailCueDot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        flex-shrink: 0;
+      }
+
+      .emailCueArrow {
+        margin: 0 !important;
+        transition: transform 0.3s ease;
+      }
+
+      .emailLink:hover {
+        .emailWords {
+          color: var(--color-accent);
+          letter-spacing: 0.01em;
+        }
+
+        .emailCue {
+          color: var(--color-text);
+          border-color: var(--color-accent);
+          background: var(--color-accent-soft);
+          transform: translateY(-2px);
+        }
+
+        .emailCueArrow {
+          transform: translateX(4px);
         }
       }
     }
@@ -77,8 +125,19 @@
       }
 
       .email {
-        a {
+        .emailLink {
+          gap: 1rem;
+        }
+
+        .emailWords {
           font-size: 1.5rem;
+        }
+
+        .emailCue {
+          font-size: 0.65rem;
+          padding: 0.5rem 0.9rem;
+          gap: 0.4rem;
+          text-align: left;
         }
       }
     }
@@ -102,8 +161,16 @@
       }
 
       .email {
-        a {
+        .emailLink {
+          gap: 1.25rem;
+        }
+
+        .emailWords {
           font-size: 2.25rem;
+        }
+
+        .emailCue {
+          font-size: 0.7rem;
         }
       }
     }
@@ -127,8 +194,12 @@
       }
 
       .email {
-        a {
+        .emailWords {
           font-size: 3rem;
+        }
+
+        .emailCue {
+          font-size: 0.75rem;
         }
       }
     }

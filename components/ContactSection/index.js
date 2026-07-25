@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Icon } from "semantic-ui-react";
 import style from "../../public/components/contact-section.module.scss";
 import Magnetic from "../generics/Magnetic";
 
@@ -52,8 +53,25 @@ const ContactSection = () => {
             viewport={{ once: true, amount: 0.5 }}
           >
             <Magnetic strength={12} className={style.magneticEmail}>
-              <a href="mailto:joshidanbosi02@gmail.com">
-                Let’s build something awesome together
+              <a href="mailto:joshidanbosi02@gmail.com" className={style.emailLink}>
+                <span className={style.emailWords}>
+                  Let’s build something awesome together
+                </span>
+
+                <span className={style.emailCue}>
+                  <motion.span
+                    className={style.emailCueDot}
+                    animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 1.8,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <Icon name="mail outline" />
+                  <span>Click to send me an email</span>
+                  <Icon name="arrow right" className={style.emailCueArrow} />
+                </span>
               </a>
             </Magnetic>
           </motion.div>
