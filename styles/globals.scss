@@ -1,12 +1,12 @@
 $font-poppins: "Poppins", sans-serif;
 
 // -------------------------------
-// Grayscale monotone palette
+// Favicon colorway
 // -------------------------------
-// Pure black, gray, off-white — no hue anywhere.
+// Black, off-white, and the brand red-orange from the "B" mark.
 $dark-blue: #f2f2f0;
 $medium-blue: #f2f2f0;
-$orange: #ffffff;
+$orange: #f5401f;
 $light-blue: #f2f2f0;
 $white: #f2f2f0;
 
@@ -19,8 +19,8 @@ $white: #f2f2f0;
   --color-text: #f2f2f0;
   --color-text-muted: #8c8c88;
   --color-text-faint: #5a5a56;
-  --color-accent: #ffffff;
-  --color-accent-soft: rgba(255, 255, 255, 0.1);
+  --color-accent: #f5401f;
+  --color-accent-soft: rgba(245, 64, 31, 0.16);
 }
 
 // Reset & Global Base Styles
