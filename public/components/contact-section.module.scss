@@ -53,7 +53,7 @@
     white-space: nowrap;
     color: var(--color-text-muted);
     margin-bottom: 2.5rem;
-    @include abstract.glass(16px, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.14));
+    @include abstract.glass(16px);
   }
 
   .availabilityShort {
@@ -73,7 +73,7 @@
   .formPanel {
     padding: 2.25rem;
     border-radius: 28px;
-    @include abstract.glass(28px, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.12));
+    @include abstract.glass(28px, var(--glass-bg-weak), var(--glass-border));
   }
 
   .form {

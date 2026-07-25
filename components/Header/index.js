@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "../../public/components/header.module.scss";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import ThemeToggle from "../generics/ThemeToggle";
 
 const navItems = [
   { label: "home", href: "#home", id: "home" },
@@ -74,6 +75,15 @@ const HeaderSection = () => {
 
   return (
     <>
+      <motion.div
+        className={styles.floatingToggle}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: easing, delay: 0.3 }}
+      >
+        <ThemeToggle />
+      </motion.div>
+
       <motion.div
         className={styles.headerBar}
         initial={{ y: -40, opacity: 0 }}
@@ -186,7 +196,7 @@ const HeaderSection = () => {
               className={styles.overlaySignature}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               idan josh bosi
             </motion.span>

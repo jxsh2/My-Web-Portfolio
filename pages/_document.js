@@ -18,6 +18,16 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/static/images/other/favicon.png" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `try {
+                var theme = window.localStorage.getItem("theme");
+                if (theme === "light") {
+                  document.documentElement.setAttribute("data-theme", "light");
+                }
+              } catch (e) {}`,
+            }}
+          />
         </Head>
         <body>
           <Main />

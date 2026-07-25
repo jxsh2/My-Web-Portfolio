@@ -11,8 +11,7 @@ $light-blue: #f2f2f0;
 $white: #f2f2f0;
 
 :root {
-  --color-bg: #0b0b0b;
-  --color-bg-alt: #151515;
+  --color-bg: #0a0a0a;
   --color-surface: rgba(255, 255, 255, 0.04);
   --color-surface-hover: rgba(255, 255, 255, 0.08);
   --color-border: rgba(255, 255, 255, 0.12);
@@ -21,6 +20,44 @@ $white: #f2f2f0;
   --color-text-faint: #5a5a56;
   --color-accent: #f5401f;
   --color-accent-soft: rgba(245, 64, 31, 0.16);
+
+  // Glass surfaces
+  --glass-bg-weak: rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-bg-strong: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-strong: rgba(255, 255, 255, 0.28);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.35);
+
+  // Overlays / scrims
+  --overlay-scrim: rgba(8, 8, 8, 0.72);
+  --overlay-solid: rgba(8, 8, 8, 0.97);
+  --modal-bg: rgba(20, 20, 20, 0.55);
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f7f6f4;
+  --color-surface: rgba(15, 12, 10, 0.03);
+  --color-surface-hover: rgba(15, 12, 10, 0.06);
+  --color-border: rgba(15, 12, 10, 0.1);
+  --color-text: #17140f;
+  --color-text-muted: #6b6863;
+  --color-text-faint: #a29e97;
+  --color-accent: #d6380f;
+  --color-accent-soft: rgba(214, 56, 15, 0.1);
+
+  --glass-bg-weak: rgba(15, 12, 10, 0.025);
+  --glass-bg: rgba(15, 12, 10, 0.035);
+  --glass-bg-strong: rgba(15, 12, 10, 0.07);
+  --glass-border: rgba(15, 12, 10, 0.1);
+  --glass-border-strong: rgba(15, 12, 10, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.7);
+  --glass-shadow: rgba(20, 15, 10, 0.1);
+
+  --overlay-scrim: rgba(247, 246, 244, 0.82);
+  --overlay-solid: rgba(247, 246, 244, 0.97);
+  --modal-bg: rgba(255, 255, 255, 0.75);
 }
 
 // Reset & Global Base Styles
@@ -62,23 +99,6 @@ body {
   height: 100%;
   overflow-x: hidden;
   background-color: var(--color-bg);
-  background-image: radial-gradient(
-      ellipse 90% 60% at 15% -10%,
-      rgba(245, 64, 31, 0.14),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 80% 55% at 100% 20%,
-      rgba(245, 64, 31, 0.07),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 90% 70% at 50% 115%,
-      rgba(245, 64, 31, 0.06),
-      transparent 60%
-    ),
-    radial-gradient(circle at top, var(--color-bg-alt), var(--color-bg) 70%);
-  background-attachment: fixed;
 }
 
 #__next {
@@ -198,11 +218,11 @@ h6 {
 // -------------------------------
 
 button {
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-color: var(--glass-bg) !important;
   -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
   backdrop-filter: blur(14px) saturate(140%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: inset 0 1px 0 var(--glass-highlight) !important;
   color: var(--color-text) !important;
   padding: 0.8rem 1.6rem;
   border-radius: 999px;
